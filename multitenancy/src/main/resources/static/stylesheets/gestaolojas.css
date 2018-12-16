@@ -1,0 +1,1021 @@
+/*
+######################
+# UTILIDADES
+######################
+*/
+.cn-glyphicon-large {
+	font-size: 18px;
+}
+
+.navbar {
+	/* 	background-color: rgb(180,115,169); */
+	/* 	background-color: rgb(83,30,55); */
+	background-color: rgb(0, 0, 0);
+}
+
+.aw-layout-sidebar {
+	background-color: #f8f8f8;
+}
+
+.aw-menu__item > a:hover,
+.aw-menu__item > a:focus {
+  background: #bebebe;
+  text-decoration: none;
+}
+
+.aw-menu__item.is-expanded {
+  border-left: 5px solid;
+  border-left-color: #1e94d2;
+  background: #c3c3c3;
+}
+
+.ns-required>.control-label:after {
+	content: "*";
+}
+
+.cn-display-none {
+	display: none;
+}
+
+/*
+######################
+# COMPONENTES
+######################
+*/
+
+/* Field Action */
+.cn-field-action {
+	display: flex;
+}
+
+.cn-field-action__icon {
+	margin: 6px 0 0 5px;
+}
+
+/* Logomarca Login */
+.marca {
+	list-style: none;
+}
+
+.marca__item {
+	display: inline-block;
+	list-style: none;
+}
+
+/*
+######################
+# PADRÕES DE LAYOUT
+######################
+*/
+
+.gl-label{
+	 font-size: 16px;
+     color: #428bca;
+     font-weight: 600;
+     font-family: 'Ubuntu', sans-serif; 
+    -webkit-font-smoothing: antialiased
+}
+
+.gl-label-box-center{
+	 font-size: 16px;
+     color: #428bca;
+     text-align: center;
+     font-weight: 600;
+     font-family: 'Ubuntu', sans-serif; 
+    -webkit-font-smoothing: antialiased
+}
+
+.gl-label-box-left{
+	 font-size: 16px;
+     color: #428bca;
+     text-align: left;
+     font-weight: 600;
+     font-family: 'Ubuntu', sans-serif; 
+    -webkit-font-smoothing: antialiased
+}
+
+.gl-label small{
+     font-size: 13px;
+     color: #428bca;
+     font-weight: 300;
+     font-family: 'Ubuntu', sans-serif; 
+    -webkit-font-smoothing: antialiased
+}
+
+.gl-nadaEncontrado{
+	font-size: 14px;
+     color: #333;
+     font-weight: 300;
+     font-family: 'Ubuntu', sans-serif; 
+    -webkit-font-smoothing: antialiased
+}
+
+.gl-dates{
+	font-size: 14px;
+     color: red;
+     font-weight: 300;
+     font-family: 'Ubuntu', sans-serif; 
+    -webkit-font-smoothing: antialiased
+}
+
+.gl-inputs{
+    font-size: 14px;
+     color: black;
+     font-weight: 400;
+     font-family: 'Ubuntu', sans-serif; 
+    -webkit-font-smoothing: antialiased
+}
+
+.gl-dados-box{
+    font-size: 28px;
+     color: black;
+     font-weight: 400;
+     text-align: center;
+     font-family: 'Ubuntu', sans-serif; 
+    -webkit-font-smoothing: antialiased
+}
+
+h1{
+	 font-size: 35px;
+     color: #333;
+     font-weight: 300;
+     font-family: 'Anton', sans-serif; 
+    -webkit-font-smoothing: antialiased
+}
+
+h4{
+     font-size: 25px;
+     color: #333;
+     font-weight: 300;
+     font-family: 'Anton', sans-serif; 
+    -webkit-font-smoothing: antialiased
+}
+
+.gl-h5{
+	margin-top: -5px;
+     font-size: 25px;
+     color: #333;
+     font-weight: 300;
+     font-family: 'Anton', sans-serif; 
+    -webkit-font-smoothing: antialiased
+}
+
+.gl-tabela-dados-centralizado{
+	text-align: center;
+}
+
+.gl-tabela-dados-esquerda{
+	text-align: left;
+}
+
+.gl-tabela-dados-direita{
+	text-align: right;
+}
+
+/* PADRAO LAYOUT MENU LATERAL  */
+
+.gl-lateral-dashboard{
+	font-size: 18px;
+     color: #333;
+     font-weight: 300;
+     font-family: 'Anton', sans-serif; 
+    -webkit-font-smoothing: antialiased
+}
+
+.gl-lateral-menuPrincipal{
+	font-size: 16px;
+     color: #333;
+     font-weight: 600;
+     font-family: 'Ubuntu', sans-serif; 
+    -webkit-font-smoothing: antialiased
+}
+
+.gl-lateral-menuSecundario{
+	font-size: 14px;
+     font-weight: 600;
+     font-family: 'Ubuntu', sans-serif; 
+    -webkit-font-smoothing: antialiased
+}
+
+.gl-dashboard-td-texto{
+	padding: 0px; 
+	width: 40%; 
+	text-align: right;
+}
+
+/*
+######################
+# PÃƒï¿½GINAS DO SISTEMA
+######################
+*/
+
+/*Colunas - Padrão de Tabelas */
+.gl-tabela-Padrao-Titulos th{
+     font-size: 14px;
+     color: #428bca;
+     font-weight: 600;
+     font-family: 'Ubuntu', sans-serif; 
+    -webkit-font-smoothing: antialiased
+}
+
+.gl-tabela-Padrao-dados td{
+    font-size: 14px;
+     color: #333;
+     font-weight: 300;
+     font-family: 'Ubuntu', sans-serif; 
+    -webkit-font-smoothing: antialiased
+}
+
+.gl-tabela-rodape-totalizador-Titulo {
+    font-size: 15px;
+    color: #428bca;
+    font-weight: 800;
+    font-family: 'Ubuntu', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-align: right;
+}
+
+.gl-tabela-rodape-totalizador-Dados {
+    font-size: 13px;
+    color: #333;
+    font-weight: 800;
+    font-family: 'Ubuntu', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-align: right;
+}
+
+/*Colunas - Pesquisa de Produtos */
+.gl-tabela-produto-codigo {
+	width: 90px;
+	text-align: center;
+}
+.gl-tabela-produto-secao {
+	width: 200px;
+    text-align: center;
+}
+
+.gl-tabela-produto-grupo {
+/*     width: 200px; */
+    text-align: center;
+}
+
+.gl-tabela-produto-subgrupo {
+/*     width: 300px; */
+    text-align: center;
+}
+
+.gl-tabela-produto-marca {
+    width: 120px;
+    text-align: center;
+}
+
+.gl-tabela-produto-partNumber {
+    width: 120px;
+    text-align: center;
+}
+
+.gl-tabela-produto-refplu {
+    width: 90px;
+    text-align: center;
+}
+
+.gl-tabela-produto-ncm{
+	 width: 120px;
+    text-align: center;
+}
+
+/* Colunas - Pesquisa de Usuarios */
+.table-usuarios-col-status {
+	width: 30px;
+	text-align: center;
+}
+
+/*Colunas - Pesquisa de Estoque */
+.gl-tabela-estoque-refplu{
+	width: 90px;
+    text-align: center;
+}
+
+.gl-tabela-estoque-marca {
+    width: 140px;
+    text-align: center;
+}
+
+.gl-tabela-estoque-descricao {
+    width: 700px;
+    text-align: left;
+}
+
+
+.gl-tabela-estoque-estCD {
+    width: 70px;
+    text-align: center;
+}
+
+.gl-tabela-estoque-estAldeota {
+    width: 70px;
+    text-align: center;
+}
+
+.gl-tabela-estoque-estIguatemi {
+    width: 70px;
+    text-align: center;
+}
+
+.gl-tabela-estoque-estNorth {
+    width: 70px;
+    text-align: center;
+}
+
+.gl-tabela-estoque-estViaSul {
+    width: 70px;
+    text-align: center;
+}
+
+/*Colunas - Pesquisa de Lojas */
+.gl-tabela-loja-codigo{
+    width: 90px;
+    text-align: center;
+}
+
+.gl-tabela-loja-dados{
+    width: 200px;
+    text-align: left;
+}
+
+/*Colunas - Pesquisa de Cargos */
+.gl-tabela-cargo-codigo{
+    width: 90px;
+    text-align: center;
+}
+
+/*Colunas - Pesquisa de Marcas */
+.gl-tabela-marca-codigo{
+    width: 90px;
+    text-align: center;
+}
+
+/*Colunas - Pesquisa de Funcionarios */
+.gl-tabela-funcionario-codigo{
+    width: 90px;
+    text-align: center;
+}
+
+.gl-tabela-funcionario-cargo{
+    width: 180px;
+    text-align: center;
+}
+
+.gl-tabela-funcionario-loja{
+    width: 300px;
+    text-align: center;
+}
+
+/*Colunas - Vendas Totais Dia por Loja */
+
+.gl-tabela-vendas-lojaTitulo {
+	width: 250px;
+	text-align: center;
+}
+
+.gl-tabela-vendas-vendaTotalTitulo{
+     width: 130px;     
+     text-align: right;
+}
+
+.gl-tabela-vendas-lojaDados {
+    width: 250px;
+    text-align: left;
+}
+
+.gl-tabela-vendas-vendaTotalDados{
+     width: 150px;     
+     text-align: right;
+}
+
+
+/*Colunas - Pesquisa de Vendas Detalhadas Por Período */
+
+.gl-tabela-vendasDetalhadasPorPeriodo-codigoTitulo {
+     width: 80px;
+     
+     text-align: center;
+}
+
+.gl-tabela-vendasDetalhadasPorPeriodo-codigoDados {
+     width: 80px;
+     
+     text-align: center;
+}
+
+.gl-tabela-vendasDetalhadasPorPeriodo-numeroNotaTitulo {
+     width: 80px;
+     
+     text-align: center;
+}
+
+.gl-tabela-vendasDetalhadasPorPeriodo-numeroNotaDados {
+     width: 80px;
+     
+     text-align: center;
+}
+
+.gl-tabela-vendasDetalhadasPorPeriodo-lojaTitulo {
+     width: 250px;
+     
+     text-align: center;
+}
+
+.gl-tabela-vendasDetalhadasPorPeriodo-lojaDados {
+     width: 250px;
+     
+     text-align: center;
+}
+
+.gl-tabela-vendasDetalhadasPorPeriodo-grupoTitulo {
+     width: 250px;
+     
+    text-align: center;
+}
+
+.gl-tabela-vendasDetalhadasPorPeriodo-refpluTitulo {
+     width: 100px;
+     
+    text-align: center;
+}
+
+.gl-tabela-vendasDetalhadasPorPeriodo-DescricaoTitulo {
+     width: 700px;
+}
+
+.gl-tabela-vendasDetalhadasPorPeriodo-RefPluDados {
+     width: 100px;
+     
+    text-align: center;
+}
+
+.gl-tabela-vendasDetalhadasPorPeriodo-CustoReposicaoTitulo {
+      width: 100px; 
+     
+    text-align: center;
+}
+.gl-tabela-vendasDetalhadasPorPeriodo-CustoReposicaoDados {
+      width: 100px; 
+     
+    text-align: right;
+}
+
+.gl-tabela-vendasDetalhadasPorPeriodo-PrecoDeVendaTitulo {
+      width: 120px; 
+     
+    text-align: center;
+}
+.gl-tabela-vendasDetalhadasPorPeriodo-PrecoDeVendaDados {
+      width: 120px; 
+     
+    text-align: right;
+}
+
+.gl-tabela-vendasDetalhadasPorPeriodo-totalItensTitulo {
+      width: 70px; 
+     
+    text-align: right;
+}
+.gl-tabela-vendasDetalhadasPorPeriodo-totalItensDados {
+      width: 70px; 
+     
+    text-align: right;
+}
+
+.gl-tabela-vendasDetalhadasPorPeriodo-valorTotalTitulo {
+      width: 120px; 
+     
+    text-align: right;
+}
+.gl-tabela-vendasDetalhadasPorPeriodo-valorTotalDados {
+      width: 120px; 
+     
+    text-align: right;
+}
+
+.gl-tabela-vendasDetalhadasPorPeriodo-DescontoTitulo {
+      width: 90px; 
+     
+    text-align: right;
+}
+.gl-tabela-vendasDetalhadasPorPeriodo-DescontoDados {
+      width: 90px; 
+     
+    text-align: right;
+}
+
+.gl-tabela-vendasDetalhadasPorPeriodo-PercentualDescontoTitulo {
+      width: 70px; 
+     
+    text-align: center;
+}
+.gl-tabela-vendasDetalhadasPorPeriodo-PercentualDescontoDados {
+      width: 70px; 
+     
+    text-align: right;
+}
+
+.gl-tabela-vendasDetalhadasPorPeriodo-ValorComDescontoTitulo {
+      width: 130px; 
+     
+    text-align: right;
+}
+.gl-tabela-vendasDetalhadasPorPeriodo-ValorComDescontoDados {
+      width: 130px; 
+     
+    text-align: right;
+}
+
+.gl-tabela-vendasDetalhadasPorPeriodo-MargemBrutaTitulo {
+      width: 100px; 
+     
+    text-align: center;
+}
+.gl-tabela-vendasDetalhadasPorPeriodo-MargemBrutaDados {
+      width: 100px; 
+     
+    text-align: right;
+}
+
+/*Colunas - Comissões Totais por Período */
+
+.gl-tabela-comissaoTotalPorPeriodo-lojaTitulo {
+     width: 200px;
+     text-align: center;
+}
+
+.gl-tabela-comissaoTotalPorPeriodo-lojaDados {
+     width: 200px;
+     text-align: center;
+}
+
+.gl-tabela-comissaoTotalPorPeriodo-codigoFuncionarioTitulo {
+     width: 100px;
+     text-align: center;
+}
+
+.gl-tabela-comissaoTotalPorPeriodo-codigoFuncionarioDados {
+     width: 100px;
+     text-align: center;
+}
+
+.gl-tabela-comissaoTotalPorPeriodo-nomeFuncionarioTitulo {
+     width: 300px;
+     text-align: left;
+}
+
+.gl-tabela-comissaoTotalPorPeriodo-nomeFuncionarioDados {
+     width: 300px;
+     text-align: left;
+}
+
+.gl-tabela-comissaoTotalPorPeriodo-valorDescontoEfetuadoTitulo {
+     width: 130px;
+     text-align: center;
+}
+
+.gl-tabela-comissaoTotalPorPeriodo-valorDescontoEfetuadoDados {
+     width: 130px;
+     text-align: right;
+}
+
+.gl-tabela-comissaoTotalPorPeriodo-valorTotalVendidoTitulo {
+     width: 130px;
+     text-align: center;
+}
+
+.gl-tabela-comissaoTotalPorPeriodo-valorTotalVendidoDados {
+     width: 130px;
+     text-align: right;
+}
+
+.gl-tabela-comissaoTotalPorPeriodo-percentualDeComissaoTitulo {
+     width: 70px;
+     text-align: center;
+}
+
+.gl-tabela-comissaoTotalPorPeriodo-percentualDeComissaoDados {
+     width: 70px;
+     text-align: center;
+}
+
+.gl-tabela-comissaoTotalPorPeriodo-valorDaComissaoTitulo {
+     width: 130px;
+     text-align: center;
+}
+
+.gl-tabela-comissaoTotalPorPeriodo-valorDaComissaoDados {
+     width: 130px;
+     text-align: right;
+}
+
+/*Colunas - Compras Gerais  */
+
+.gl-tabela-comprasGeral-grupoTitulo {
+	 width: 150px;
+     text-align: left;
+}
+
+.gl-tabela-comprasGeral-grupoDados {
+     width: 150px;
+     text-align: left;
+}
+
+.gl-tabela-comprasGeral-partNumberTitulo {
+     width: 150px;
+     text-align: left;
+}
+
+.gl-tabela-comprasGeral-partNumberDados {
+     width: 150px;
+     text-align: left;
+}
+
+.gl-tabela-comprasGeral-marcasTitulo {
+     width: 110px;
+     text-align: left;
+}
+
+.gl-tabela-comprasGeral-marcasDados {
+     width: 110px;
+     text-align: left;
+}
+
+.gl-tabela-comprasGeral-refpluTitulo {
+     width: 80px;
+     text-align: center;
+}
+
+.gl-tabela-comprasGeral-refpluDados {
+     width: 80px;
+     text-align: center;
+}
+
+.gl-tabela-comprasGeral-custoTitulo {
+     width: 130px;
+     text-align: center;
+}
+
+.gl-tabela-comprasGeral-custoDados {
+     width: 130px;
+     text-align: right;
+}
+
+.gl-tabela-comprasGeral-precoVendaTitulo {
+     width: 130px;
+     text-align: center;
+}
+
+.gl-tabela-comprasGeral-precoVendaDados {
+     width: 130px;
+     text-align: right;
+}
+
+.gl-tabela-comprasGeral-vendasTitulo {
+     width: 70px;
+     text-align: center;
+}
+
+.gl-tabela-comprasGeral-vendasDados {
+     width: 70px;
+     text-align: center;
+}
+
+.gl-tabela-comprasGeral-estoqueTitulo {
+     width: 70px;
+     text-align: center;
+}
+
+.gl-tabela-comprasGeral-estoqueDados {
+     width: 70px;
+     text-align: center;
+}
+
+/*Colunas - Margem Contribuição Marcas Diárias  */
+
+.gl-tabela-margemContribuicaoMarcasDiaria-MarcaTitulo {
+     width: 70px;
+     text-align: left;
+}
+
+.gl-tabela-margemContribuicaoMarcasDiaria-MarcaDados {
+     width: 70px;
+     text-align: left;
+}
+
+.gl-tabela-margemContribuicaoMarcasDiaria-valorTotalTitulo {
+     width: 90px;
+     text-align: right;
+}
+
+.gl-tabela-margemContribuicaoMarcasDiaria-valorTotalDados {
+     width: 90px;
+     text-align: right;
+}
+
+.gl-tabela-margemContribuicaoMarcasDiaria-percentualTitulo {
+     width: 90px;
+     text-align: center;
+}
+
+.gl-tabela-margemContribuicaoMarcasDiaria-percentualDados {
+     width: 90px;
+     text-align: center;
+}
+
+/*
+##########################
+# CUSTOMIZAÃƒâ€¡ÃƒÆ’O DE COMPONENTES
+##########################
+*/
+.checkbox input[type="checkbox"]:checked+input+label::after {
+	font-family: 'FontAwesome';
+	content: "\f00c";
+}
+
+/*
+##########################
+# DASHBOARD BOX
+##########################
+*/
+
+/*BOX - Dia */
+.sc-box__dia {
+  padding: 20px;
+  margin-bottom: 15px;
+  border: 1px solid #eeeeee;
+  border-bottom: 3px solid #1e94d2;
+
+}
+.sc-box__icon__dia {
+  float: left;
+  color: #428bca;
+}
+.sc-box__value__dia {
+  font-size: 2.39em;
+  font-weight: 600;
+  font-family: 'Ubuntu', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+}
+.sc-box__title__dia {
+  display: block;
+  font-size: 1em;
+  font-weight: 600;
+  text-align: center;
+}
+
+.sc-box__footer__dia {
+  margin-top: -14px;
+  margin-bottom: 14px;
+  background-color: #428bca;
+}
+
+.sc-box__footer__dia a {
+     color: yellow;
+}
+
+.sc_box__footer_text__dia{
+  text-align: center;
+  font-size: 1.6em;
+  font-weight: 800;
+  background-color: #428bca;
+  font-family: 'Ubuntu', sans-serif;
+  color: yellow;
+  display: block;
+}
+
+/*BOX - Mês */
+
+.sc-box__mes {
+  padding: 20px;
+  margin-bottom: 15px;
+  border: 1px solid #eeeeee;
+  border-bottom: 3px solid #FA8072;
+}
+.sc-box__icon__mes {
+  float: left;
+  color: #d9534f;
+}
+.sc-box__value__mes {
+  font-size: 2.39em;
+  font-weight: 600;
+  font-family: 'Ubuntu', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+}
+.sc-box__title__mes {
+  display: block;
+  font-size: 1em;
+  font-weight: 600;
+  text-align: center;
+}
+
+.sc-box__footer__mes {
+  margin-top: -14px;
+  margin-bottom: 14px;
+  background-color: #d9534f;
+}
+
+.sc_box__footer_text__mes {
+  text-align: center;
+    font-size: 1.6em;
+  color: black;
+  display: block;
+   font-weight: 600;
+}
+
+.sc_box__footer_text__mes a {
+	 color: black;
+}
+
+/*BOX - Ano */
+
+.sc-box__ano {
+  padding: 20px;
+  margin-bottom: 15px;
+  border: 1px solid #eeeeee;
+  border-bottom: 3px solid black;
+}
+.sc-box__icon__ano {
+  float: left;
+  color: black;
+}
+.sc-box__value__ano {
+  font-size: 2.39em;
+  font-weight: 600;
+  font-family: 'Ubuntu', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+}
+.sc-box__title__ano {
+  display: block;
+  font-size: 1em;
+  font-weight: 600;
+  text-align: center;
+}
+
+.sc-box__footer__ano {
+  margin-top: -14px;
+  margin-bottom: 14px;
+  background-color: black;
+}
+
+.sc_box__footer_text__ano {
+  text-align: center;
+    font-size: 1.6em;
+  color: white;
+  display: block;
+   font-weight: 600;
+}
+
+.sc_box__footer_text__ano a {
+     color: white;
+}
+
+.dashboardLabel{
+	border-top: none  !important; 
+	padding: 0px  !important; 
+	width: 40%  !important; 
+	text-align: right  !important; 
+	font-size: 20px  !important;
+}
+
+.dashboardValor{
+	border-top: none  !important; 
+	padding: 0px !important;  
+	width: 40% !important;  
+	text-align: right !important;  
+	font-size: 20px !important; 
+}
+
+.dashboardEspacamento{
+	border-top: none !important;  
+	width: 15% !important; 
+}
+
+
+--teste
+
+
+@media (min-width: 768px){
+.circle-tile {
+    margin-bottom: 30px;
+}
+}
+
+.circle-tile {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.circle-tile-heading {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto -40px;
+    border: 3px solid rgba(255,255,255,0.3);
+    border-radius: 100%;
+    color: #fff;
+    transition: all ease-in-out .3s;
+}
+
+/* -- Background Helper Classes */
+
+/* Use these to cuztomize the background color of a div. These are used along with tiles, or any other div you want to customize. */
+
+ .dark-blue {
+    background-color: #34495e;
+}
+
+.green {
+    background-color: #16a085;
+}
+
+.blue {
+    background-color: #2980b9;
+}
+
+.orange {
+    background-color: #f39c12;
+}
+
+.red {
+    background-color: #e74c3c;
+}
+
+.purple {
+    background-color: #8e44ad;
+}
+
+.text-faded {
+    color: rgba(255,255,255,0.7);
+}
+
+
+
+.circle-tile-heading .fa {
+    line-height: 80px;
+}
+
+.circle-tile-content {
+    padding-top: 50px;
+}
+.circle-tile-description {
+    text-transform: uppercase;
+}
+
+.text-faded {
+    color: rgba(255,255,255,0.7);
+}
+
+.circle-tile-number {
+    padding: 5px 0 15px;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.circle-tile-footer {
+    display: block;
+    padding: 5px;
+    color: rgba(255,255,255,0.5);
+    background-color: rgba(0,0,0,0.1);
+    transition: all ease-in-out .3s;
+}
+
+.circle-tile-footer:hover {
+    text-decoration: none;
+    color: rgba(255,255,255,0.5);
+    background-color: rgba(0,0,0,0.2);
+}
+
+.aw-box--logotipo {
+  position: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+/*   border-bottom: 3px solid #1e94d2; */
+}
+
+.gl-submenulateral{
+	padding-top:10px;
+	bold; display: block; 
+	color: red; 
+	text-align: center;
+	font-size: 16px;
+    color: red;
+    font-weight: 600;
+    font-family: 'Ubuntu', sans-serif; 
+   -webkit-font-smoothing: antialiased
+}

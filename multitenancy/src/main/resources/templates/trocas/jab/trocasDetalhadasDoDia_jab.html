@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout/LayoutPadrao}"
+    xmlns:brewer="http://brewer.algaworks.com">
+        
+<head>
+    <title>Trocas detalhadas de hoje </title>
+     <script th:src="@{/javascripts/vendors/pace.min.js}"></script> 
+    <link rel="stylesheet" type="text/css" th:href="@{/layout/stylesheets/pace-theme-barber-shop.css}"/>
+</head>
+
+<body>
+
+<section layout:fragment="conteudo">
+    <div class="page-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-10">
+                    <h1>Trocas detalhadas de hoje </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid">
+            
+                <div class="table-responsive  bw-tabela-simples" >
+                    <table class="table  table-hover" th:object="${trocasDetalhadasPorDia}" id="tableTrocasDetalhadasDoDia">
+                        <thead>
+                            <tr class="gl-tabela-Padrao-Titulos">
+                             <th>Codigo</th>
+                              <th>Danfe</th>
+                                <th>Lojas</th>
+                                <th>Refplu</th>
+                                <th>Descrição</th>
+                                 <th>Valor Unitário</th>
+                                  <th>Qde Itens</th>
+                                 <th>Valor Total</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr  class="gl-tabela-Padrao-dados" th:each="troca : ${trocasDetalhadasPorDia}">
+                                <td th:text="${#strings.trim(troca.codigo)}">1</td>
+                                <td th:text="${@uIUtil.trimZeroEsquerda(troca.numeroNota)}">1</td>
+                                <td th:text="${#strings.trim(troca.loja)}">1</td>
+                                <td th:text="${troca.refplu}">Visa</td>
+                                <td th:text="${troca.produtoDescricao}">Visa</td>
+                                  <td th:text="${{'R$ ' + troca.valorUnitario}}">Visa</td>
+                                 <td th:text="${{troca.totalItens}}">Visa</td>
+                                  <td th:text="${{'R$ ' + (troca.valorUnitario * troca.totalItens)}}">Visa</td>
+                                <td></td>
+                            </tr>
+                            <tr th:if="${#lists.isEmpty(trocasDetalhadasPorDia)}">
+                                <td colspan="11" class="gl-nadaEncontrado">Nenhuma troca encontrada no período</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                        <tr th:each="somaVenda : ${somaTrocaDoDia}"> 
+                            <td colspan="7" class="gl-tabela-rodape-totalizador-Titulo">TOTAL DE TROCAS HOJE</td>
+                            <td style="text-align: left;" class="gl-tabela-rodape-totalizador-Dados">
+                                    <th:block th:if="${somaVenda.valorTroca > 0 }">
+                                                  <label style="color: red" th:text="'R$ ' + ${{somaVenda.valorTroca}}"></label>
+                                    </th:block> 
+                                      <th:block th:if="${somaVenda.valorTroca <= 0 }">
+                                                   <label style="color: #333; font-weight: 300;" th:text="'R$ ' + ${{somaVenda.valorTroca}}"></label>
+                                    </th:block>    
+                            </td>
+                            <td></td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                   
+                    <div class="gl-dates" th:if="${!#lists.isEmpty(trocasDetalhadasPorDia)}">
+                    <hr />
+<!--                        <label >EXPORTAR PARA:</label> -->
+                        <button id="btnExportExcel" class="btn btn-sm btn-success clearfix">
+                            <span class="fa fa-file-excel-o"></span>  EXPORT TO EXCEL
+                        </button>
+                    <hr />
+                    </div>
+                </div>
+</div>
+    
+    
+    </section>
+
+</html>
