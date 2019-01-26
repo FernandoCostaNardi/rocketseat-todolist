@@ -1,0 +1,421 @@
+/*-----------------------*\
+	Plano
+\*-----------------------*/
+
+.plano{
+	position: relative;
+
+	padding: 10px;
+	border: 1px solid #95a4a5;
+
+	font-size: 1.4rem;
+}
+
+.plano--em-producao::after{
+	position: absolute;
+	top: -10px;
+	left: -10px;
+
+	padding: 0 10px;
+
+	background-color: #c20303;
+	color: #fff;
+
+	font-size: 0.7142em;
+	line-height: 2.5;
+
+
+	content: "Em Produção";
+}
+
+.plano__cabecalho{
+	background-color: #95a4a5;
+	color: #fff;
+	text-align: center;
+	line-height: 2.5;
+	margin: -10px;
+	margin-bottom: 0;
+	font-weight: normal;
+	font-size: 2em;
+}
+
+.plano__preco{
+	text-align: center;
+	font-size: 2em;
+	margin: 20px 0;
+}
+
+.plano__caracteristicas{
+
+	list-style: none;
+	padding: 0;
+	margin: 20px 0;
+	font-size: 1em;
+
+}
+
+.plano__caracteristicas > li{
+	text-align: center;
+}
+
+.plano__rodape{
+	text-align: center;
+}
+
+
+
+/*-----------------------*\
+	Botao
+\*-----------------------*/
+.botao{
+	display: inline-block;
+	background-color: #bbb;
+	color: #fff;
+	padding: 0.8em 1.2em;
+	text-decoration: none;
+	font-size: 1em;
+	line-height: normal;
+}
+
+.botao:hover, .botao:focus {
+	background-color: #aaa;
+	text-decoration: none;
+	color: #fff;
+}
+
+.botao--entreemcontato, .botao--login{
+	background-color: #7092BE;
+}
+
+.botao--entreemcontato:hover, .botao--entreemcontato:focus, 
+.botao--login:hover, .botao--login:focus{
+	background-color: black;
+}
+
+.botao--principal{
+	border-radius: 10px;
+
+	background-color: black;
+}
+
+.botao--principal:hover, .botao--principal:focus{
+	background-color: #110977;
+}
+
+/*-----------------------*\
+	Chamada
+\*-----------------------*/
+
+.chamada{
+	font-size: 1.6rem;
+	text-align: center;
+}
+
+.chamada__titulo{
+	margin: 0;
+
+	color: #fff;
+
+	font-size: 3.375em;
+	line-height: 0.9;
+	text-shadow: 1px 1px #313131;
+}
+
+.chamada__subtitulo{
+	margin: 60px 0;
+
+	color: #fff;
+
+	font-size: 1em;
+}
+
+.chamada__acao{
+	font-size: 1em;
+}
+
+@media(min-width: 992px){
+	.chamada{
+		padding-left: 10%;
+		padding-right: 10%;
+
+		font-size: 2.2rem;
+	}
+}
+
+/*-----------------------*\
+	Depoimento
+\*-----------------------*/
+
+.depoimento{
+	
+	font-size: 2.2rem;
+
+}
+
+.depoimento > blockquote {
+	position: relative;
+	margin: 0;
+	padding: 0 60px;
+
+	text-align: center;
+	font-size: 1em;
+}
+
+.depoimento > blockquote::before {
+	position: absolute;
+	left: 0;
+	top: -0.35em;
+
+	color: #ccc;
+
+	font-size: 8em;
+
+	content: "\201C";
+}
+
+.depoimento__autor{
+	margin-top: 40px;
+
+	text-align: center;
+	font-size: 0.7272em;
+}
+
+.depoimento__autor > img{
+	border-radius: 50%;
+}
+
+.depoimento__autor > p{
+	margin-top: 10px;
+}
+
+.depoimento__alerta {
+	color: red;
+}
+
+@media(min-width: 992px){
+	.depoimento{
+		padding-left: 15%;
+		padding-right: 15%;
+
+		font-size: 2.8rem;
+	}
+}
+
+/*-----------------------*\
+	Navegação
+\*-----------------------*/
+
+.navegacao{
+    
+}
+
+.navegacao__marca{
+	float: left;
+}
+.navegacao__menu{
+	float: right;
+}
+
+/*-----------------------*\
+	Botão Chaveador
+\*-----------------------*/
+
+
+.botao-chaveador{
+
+	width: 24px;
+	height: 24px;
+	border: 0;
+
+
+	background: none;
+	background-image: url("../images/bars.png");
+
+	outline: none;
+
+}
+
+@media(min-width: 992px){
+	.botao-chaveador{
+		display: none;
+	}
+}
+
+/*-----------------------*\
+	Navegação Marca
+\*-----------------------*/
+
+.marca{
+	margin: 0;
+	padding-top: 10px;
+    height: 60px;
+	font-size: 1.4em;
+	line-height: 12px;
+
+	list-style: none;
+}
+
+.marca__item{
+	display: inline-block;
+
+}
+
+.marca__item-simbolo{
+	margin-bottom: 30px;
+}
+
+.marca__item-nome{
+	margin-top: 25px;
+	
+	font-family: 'Exo', sans-serif;
+	font-size: 1.9em;
+	color: black;
+}
+
+.marca__item_sobrenome{
+	margin: 0;
+	margin-top: 10px;
+	padding-left: 45px;
+
+	font-family: 'Quicksand', sans-serif;
+	font-size: 0.9em;
+	color: black;
+	font-weight: 600;
+}
+
+
+
+/*-----------------------*\
+	Navegação Menu
+\*-----------------------*/
+
+.menu{
+	margin: 0;
+	
+	padding-top: 5px;
+	font-size: 1.4em;
+
+	list-style: none;
+}
+
+
+@media(max-width: 991px){
+
+   .menu{
+	 position: fixed;
+	 top: 0;
+	 left: 0;
+     bottom: 0;
+
+	 width: 200px;
+	 padding: 20px;
+	 border-right: 1px solid #eee;
+
+	 background-color: #fbfbfb;
+	}
+
+	.menu__item{
+	display: block;
+
+	line-height: 3;
+
+    }
+
+
+ 
+ .menu__item--botao{
+	margin-top: 20px;
+
+  }
+
+}
+
+@media(min-width: 992px){
+	.menu__item{
+		display: inline-block;
+
+		padding-right: 20px;
+	}
+
+	.menu__item:last-of-type{
+		padding-right: 0px;
+	}
+}
+
+/*-----------------------*\
+	Plano
+\*-----------------------*/
+
+.contato{
+	position: relative;
+
+	padding: 10px;
+	border: 1px solid #95a4a5;
+
+	font-size: 1.4rem;
+}
+
+.contato--em-producao::after{
+	position: absolute;
+	top: -10px;
+	left: -10px;
+
+	padding: 0 10px;
+
+	background-color: #c20303;
+	color: #fff;
+
+	font-size: 0.7142em;
+	line-height: 2.5;
+
+
+	content: "Em Produção";
+}
+
+.contato__cabecalho{
+	
+	color: black;
+	text-align: center;
+	line-height: 2.5;
+	margin: -10px;
+	margin-bottom: 0;
+	font-weight: normal;
+	font-size: 2em;
+}
+
+.contato__telefone{
+	text-align: center;
+	font-size: 2em;
+	margin: 20px 0;
+}
+
+.contato__telefone__span{
+	color: red;
+}
+
+.contato__email{
+	text-align: center;
+	font-size: 2em;
+	margin: 20px 0;
+}
+
+.contato__email__span{
+	color: red;
+}
+
+.plano__caracteristicas{
+
+	list-style: none;
+	padding: 0;
+	margin: 20px 0;
+	font-size: 1em;
+
+}
+
+.plano__caracteristicas > li{
+	text-align: center;
+}
+
+.plano__rodape{
+	text-align: center;
+}

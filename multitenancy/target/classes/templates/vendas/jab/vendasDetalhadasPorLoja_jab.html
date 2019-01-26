@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout/LayoutPadrao}"
+    xmlns:brewer="http://brewer.algaworks.com">
+        
+<head>
+    <title>Total de Vendas Por Período </title>
+     <script th:src="@{/javascripts/vendors/pace.min.js}"></script> 
+    <link rel="stylesheet" type="text/css" th:href="@{/layout/stylesheets/pace-theme-barber-shop.css}"/>
+</head>
+
+<body>
+
+<section layout:fragment="conteudo">
+    <div class="page-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-10">
+                    <h1>Total de Vendas Por Período </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <div class="container-fluid">
+            
+                <form method="GET" th:action="@{/vendas/{tenantid}/vendasDetalhadasPorPeriodo_{tenantid}/pesquisaDetalhada_{tenantid}(tenantid=${tenantid})}">
+
+                <div class="row">
+                            <div class="form-group  col-sm-3">
+                                <label for="dataEmissaoInicial" class="control-label  gl-label">Período Inicial</label> 
+                                <div class='input-group date'>
+                                    <input type="text" class="form-control  js-date gl-dates"
+                                        id="dataEmissaoInicial" name="dataEmissaoInicial"
+                                        autocomplete="off" /> 
+                                        <span class="input-group-addon"> 
+                                              <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                </div>
+                            </div>
+                            <div class="form-group  col-sm-3">
+                                <label for="dataEmissaoFinal" class="control-label  gl-label">Período Final</label> 
+                                <div class='input-group date'>
+                                        <input type="text" class="form-control js-date gl-dates"
+                                            id="dataEmissaoFinal"  name="dataEmissaoFinal" autocomplete="off" />
+                                        <span class="input-group-addon"> 
+                                              <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                </div>  
+                            </div>
+                             <span class="input-group-btn" style="padding-top: 28px;">    
+                                 <button type="submit" class="btn  btn-primary">
+                                      <i class="glyphicon glyphicon-search"></i>
+                                 </button>
+                             </span>
+                        </div>
+                </form> 
+            
+                <div class="table-responsive  bw-tabela-simples" >
+                    <table class="table  table-hover" th:object="${vendasDetalhadasPorPeriodo}" id="tableVendasDetalhadasPorLoja">
+                        <thead>
+                            <tr class="gl-tabela-Padrao-Titulos">
+                             <th class="gl-tabela-vendasDetalhadasPorPeriodo-codigoTitulo">Codigo</th>
+                              <th class="gl-tabela-vendasDetalhadasPorPeriodo-numeroNotaTitulo">Cupom</th>
+                                <th class="gl-tabela-vendasDetalhadasPorPeriodo-lojaTitulo">Lojas</th>
+                                <th class="gl-tabela-vendasDetalhadasPorPeriodo-grupoTitulo">Grupo</th>
+                                <th class="gl-tabela-vendasDetalhadasPorPeriodo-refpluTitulo">Refplu</th>
+                                <th class="gl-tabela-vendasDetalhadasPorPeriodo-DescricaoTitulo">Descrição</th>
+                                <th class="gl-tabela-vendasDetalhadasPorPeriodo-CustoReposicaoTitulo">Custo Reposição</th>
+                                 <th class="gl-tabela-vendasDetalhadasPorPeriodo-PrecoDeVendaTitulo">Preço de Venda</th>
+                                  <th class="gl-tabela-vendasDetalhadasPorPeriodo-totalItensTitulo">Qde Itens</th>
+                                 <th class="gl-tabela-vendasDetalhadasPorPeriodo-valorTotalTitulo">Valor Total</th>
+                                 <th class="gl-tabela-vendasDetalhadasPorPeriodo-DescontoTitulo">Desconto</th>
+                                  <th class="gl-tabela-vendasDetalhadasPorPeriodo-PercentualDescontoTitulo">% Desconto</th>
+                                  <th class="gl-tabela-vendasDetalhadasPorPeriodo-ValorComDescontoTitulo">Valor com Desconto</th>
+                                  <th class="gl-tabela-vendasDetalhadasPorPeriodo-MargemBrutaTitulo">Margem Bruta</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr  class="gl-tabela-Padrao-dados" th:each="venda : ${vendasDetalhadasPorPeriodo}">
+								<td class="gl-tabela-vendasDetalhadasPorPeriodo-codigoDados" th:text="${#strings.trim(venda.codigo)}">1</td>
+								<td class="gl-tabela-vendasDetalhadasPorPeriodo-numeroNotaDados" th:text="${@uIUtil.trimZeroEsquerda(venda.numeroNota)}">1</td>
+                                <td class="gl-tabela-vendasDetalhadasPorPeriodo-lojaDados" th:text="${#strings.trim(venda.loja)}">1</td>
+                                <td th:text="${venda.grupo}">Visa</td>
+                                <td class="gl-tabela-vendasDetalhadasPorPeriodo-RefPluDados" th:text="${venda.refplu}">Visa</td>
+                                <td th:text="${venda.produtoDescricao}">Visa</td>
+                                 <td class="gl-tabela-vendasDetalhadasPorPeriodo-CustoReposicaoDados" th:text="${{'R$ ' + @uIUtil.formatAmount(venda.custoReposicao)}}" >Visa</td>
+                                 <td class="gl-tabela-vendasDetalhadasPorPeriodo-PrecoDeVendaDados" th:text="${{'R$ ' + venda.precoDeVenda}}">Visa</td>
+                                 <td class="gl-tabela-vendasDetalhadasPorPeriodo-totalItensDados" th:text="${{venda.totalItens}}">Visa</td>
+                                  <td class="gl-tabela-vendasDetalhadasPorPeriodo-valorTotalDados" th:text="${{'R$ ' + (venda.precoDeVenda * venda.totalItens)}}">Visa</td>
+                                 <td class="gl-tabela-vendasDetalhadasPorPeriodo-DescontoDados" th:text="${{'R$ ' + ((venda.precoDeVenda * venda.totalItens) - venda.precoDeVendaComDesconto)}}">Visa</td>
+                                 <td class="gl-tabela-vendasDetalhadasPorPeriodo-PercentualDescontoDados" th:text="${{((((venda.precoDeVenda * venda.totalItens) - venda.precoDeVendaComDesconto) / (venda.precoDeVenda * venda.totalItens)) * 100)  + ' %'}}">Visa</td>
+                                 <td class="gl-tabela-vendasDetalhadasPorPeriodo-ValorComDescontoDados" th:text="${{'R$ ' + venda.precoDeVendaComDesconto}}">Visa</td>
+<!--                                  <td th:text="${{(((venda.precoDeVendaComDesconto / @uIUtil.formatAmount(venda.custoReposicao)) -1) * 100)  + ' %'}}">Visa</td> -->
+                                 <td class="gl-tabela-vendasDetalhadasPorPeriodo-MargemBrutaDados"  th:text="${{((venda.precoDeVendaComDesconto / ((@uIUtil.formatAmount(venda.custoReposicao)) * venda.totalItens)) - 1) * 100 + ' %'}}">Visa</td>
+                                <td></td>
+                            </tr>
+                            <tr th:if="${#lists.isEmpty(vendasDetalhadasPorPeriodo)}">
+                                <td colspan="11" class="gl-nadaEncontrado">Nenhuma venda encontrada no período</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <td  colspan="11" class="gl-tabela-rodape-totalizador-Titulo">TOTAL DE VENDAS DO PERÍODO</td>
+                            <td colspan="2" class="gl-tabela-rodape-totalizador-Dados">R$ [[${{totalVendasPorPeriodol}}]]</td>
+                            <td></td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                    <div class="gl-dates" th:if="${!#lists.isEmpty(vendasDetalhadasPorPeriodo)}">
+                    <hr />
+<!--                 		<label >EXPORTAR PARA:</label> -->
+                		<button id="btnExportExcel" class="btn btn-sm btn-success clearfix">
+                			<span class="fa fa-file-excel-o"></span>  EXPORT TO EXCEL
+                		</button>
+                	<hr />
+                	</div>
+                </div>
+</div>
+    
+</section>
+<th:block layout:fragment="javascript-extra">
+      <script th:src="@{/javascripts/exportacaoExcel/tabelaParaExcel.js}"></script>  
+    </th:block>
+</body>
+</html>

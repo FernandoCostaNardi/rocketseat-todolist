@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout/LayoutPadrao}"
+    xmlns:brewer="http://brewer.algaworks.com">
+        
+<head>
+    <title>Pesquisa de Cargos</title>
+     <script th:src="@{/javascripts/vendors/pace.min.js}"></script> 
+    <link rel="stylesheet" type="text/css" th:href="@{/layout/stylesheets/pace-theme-barber-shop.css}"/>
+</head>
+
+<body>
+<section layout:fragment="conteudo">
+    <div class="page-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-10">
+                    <h1>Pesquisa de Cargos</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid">
+                <form method="GET" th:object="${cargoFiltro}"  th:action="@{/cargos/{tenantid}/cargos(tenantid=${tenantid})}">
+                        <div class="row">
+                            <div class="form-group  col-sm-4">
+                                <div class="input-group">
+                                        <input type="text" class="form-control  gl-inputs" id="descricao" autofocus="autofocus" th:field="*{descricao}" 
+                                                    placeholder="Qual cargo você está procurando?"/>
+                                        <span class="input-group-btn">          
+                                                <button type="submit" class="btn  btn-primary">
+                                                        <i class="glyphicon glyphicon-search"></i>
+                                                </button>
+                                        </span>
+                                </div>
+                            </div>
+                        </div>
+                </form> 
+                <div class="table-responsive  bw-tabela-simples">
+                    <table class="table  table-hover" th:object="${cargos}" id="tableCargos">
+                        <thead>
+                            <tr class="gl-tabela-Padrao-Titulos" >
+                                <th class="gl-tabela-cargo-codigo">Codigo</th>
+                                <th>Cargo</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr class="gl-tabela-Padrao-dados" th:each="cargo : ${cargos}">
+
+                                <td class="gl-tabela-cargo-codigo" th:text="${cargo.codigo}">1</td>
+                                <td th:text="${cargo.descricao}">Visa</td>
+                            </tr>
+                            <tr th:if="${#lists.isEmpty(cargos)}">
+                                <td colspan="7">Nenhum cargo encontrado</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="gl-dates" th:if="${!#lists.isEmpty(cargos)}">
+                    <hr />
+<!--                 		<label >EXPORTAR PARA:</label> -->
+                		<button id="btnExportExcel" class="btn btn-sm btn-success clearfix">
+                			<span class="fa fa-file-excel-o"></span>  EXPORT TO EXCEL
+                		</button>
+                	<hr />
+                	</div>
+                </div>
+</div>
+    
+</section>
+<th:block layout:fragment="javascript-extra">
+      <script th:src="@{/javascripts/exportacaoExcel/tabelaParaExcel.js}"></script>  
+ </th:block>
+</body>
+</html>
+    
+  
+    
