@@ -24,7 +24,7 @@ import com.sysconard.Glojas.DTO.EstoqueDTO;
 		+ "(select estoque7_.esttot from estoque estoque7_ inner join referencia referencia8_ on estoque7_.refplu=referencia8_.refplu where estoque7_.lojcod=5 and estoque7_.loccod=1 and referencia8_.refplu=referencia1_.refplu) as loj5, "
 		+ "(select estoque8_.esttot from estoque estoque8_ inner join referencia referencia9_ on estoque8_.refplu=referencia9_.refplu where estoque8_.lojcod=6 and estoque8_.loccod=1 and referencia9_.refplu=referencia1_.refplu) as loj6, "
 		+ "(select estoque9_.esttot from estoque estoque9_ inner join referencia referencia10_ on estoque9_.refplu=referencia10_.refplu where estoque9_.lojcod=7 and estoque9_.loccod=1 and referencia10_.refplu=referencia1_.refplu) as loj7, "
-		+ "(select estoque10_.esttot from estoque estoque10_ inner join referencia referencia11_ on estoque10_.refplu=referencia11_.refplu where estoque10_.lojcod=8 and estoque10_.loccod=1 and referencia11_.refplu=referencia1_.refplu) as loj8, "
+		+ "(select estoque12_.esttot from estoque estoque12_ inner join referencia referencia13_ on estoque12_.refplu=referencia13_.refplu where estoque12_.lojcod=10 and estoque12_.loccod=1 and referencia13_.refplu=referencia1_.refplu) as loj10, "
 		+ "(select estoque11_.esttot from estoque estoque11_ inner join referencia referencia12_ on estoque11_.refplu=referencia12_.refplu where estoque11_.lojcod=9 and estoque11_.loccod=1 and referencia12_.refplu=referencia1_.refplu) as loj9 "
 		+ "from estoque estoque0_ inner join referencia referencia1_ on estoque0_.refplu=referencia1_.refplu inner join produto produto2_ on referencia1_.procod=produto2_.procod, marca marca3_ where produto2_.marcod=marca3_.marcod and estoque0_.lojcod=1 and estoque0_.loccod=1", resultSetMapping = "buscaEstoqueMapping")
 @SqlResultSetMapping(name = "buscaEstoqueMapping", classes = {
@@ -32,7 +32,7 @@ import com.sysconard.Glojas.DTO.EstoqueDTO;
 				@ColumnResult(name = "refplu"), @ColumnResult(name = "marca"), @ColumnResult(name = "descricao"),
 				@ColumnResult(name = "loj1"), @ColumnResult(name = "loj2"), @ColumnResult(name = "loj3"),
 				@ColumnResult(name = "loj4"), @ColumnResult(name = "loj5"),
-				@ColumnResult(name = "loj6"), @ColumnResult(name = "loj7"), @ColumnResult(name = "loj8"), @ColumnResult(name = "loj9") }) })
+				@ColumnResult(name = "loj6"), @ColumnResult(name = "loj7"), @ColumnResult(name = "loj10"), @ColumnResult(name = "loj9") }) })
 @Entity
 @Table(name = "ESTOQUE")
 public class Estoque implements Serializable {
