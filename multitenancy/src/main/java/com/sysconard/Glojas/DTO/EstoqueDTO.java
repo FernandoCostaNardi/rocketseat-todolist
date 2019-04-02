@@ -14,8 +14,8 @@ public class EstoqueDTO {
 	private BigDecimal loj5;
 	private BigDecimal loj6;
 	private BigDecimal loj7;
-	private BigDecimal loj8;
 	private BigDecimal loj9;
+	private BigDecimal loj10;
 	public EstoqueDTO(String refplu
 								, String marca
 								, String descricao
@@ -26,8 +26,8 @@ public class EstoqueDTO {
 								, BigDecimal loj5
 								, BigDecimal loj6
 								, BigDecimal loj7
-								, BigDecimal loj8
-								, BigDecimal loj9) {
+								, BigDecimal loj9
+								, BigDecimal loj10) {
 		super();
 		this.refplu = refplu;
 		this.marca = marca;
@@ -39,8 +39,8 @@ public class EstoqueDTO {
 		this.loj5 = loj5;
 		this.loj6 = loj6;
 		this.loj7 = loj7;
-		this.loj8 = loj8;
 		this.loj9 = loj9;
+		this.loj10 = loj10;
 	}
 	public String getRefplu() {
 		return refplu;
@@ -102,17 +102,17 @@ public class EstoqueDTO {
 	public void setLoj7(BigDecimal loj7) {
 		this.loj7 = loj7;
 	}
-	public BigDecimal getLoj8() {
-		return loj8;
-	}
-	public void setLoj8(BigDecimal loj8) {
-		this.loj8 = loj8;
-	}
 	public BigDecimal getLoj9() {
 		return loj9;
 	}
 	public void setLoj9(BigDecimal loj9) {
 		this.loj9 = loj9;
+	}
+	public BigDecimal getLoj10() {
+		return loj10;
+	}
+	public void setLoj10(BigDecimal loj10) {
+		this.loj10 = loj10;
 	}
 
 	
