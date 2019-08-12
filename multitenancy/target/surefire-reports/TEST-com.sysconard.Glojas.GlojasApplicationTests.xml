@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.sysconard.Glojas.GlojasApplicationTests" time="0.093" tests="1" errors="0" skipped="0" failures="0">
+<testsuite name="com.sysconard.Glojas.GlojasApplicationTests" time="0.076" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-oracle/jre/lib/amd64"/>
@@ -8,6 +8,7 @@
     <property name="maven.multiModuleProjectDirectory" value="/home/fernando/codes/sysconard/api/glojas/multitenancy"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=":"/>
+    <property name="java.rmi.server.randomIDs" value="true"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
     <property name="file.encoding.pkg" value="sun.io"/>
@@ -24,20 +25,20 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="os.name" value="Linux"/>
-    <property name="classworlds.conf" value="/home/fernando/codes/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf9210102932139166352.tmp"/>
+    <property name="classworlds.conf" value="/home/fernando/codes/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf3709656608091499767.tmp"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="os.version" value="4.18.0-16-generic"/>
+    <property name="os.version" value="4.18.0-25-generic"/>
     <property name="user.home" value="/home/fernando"/>
     <property name="user.timezone" value="America/Fortaleza"/>
     <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
-    <property name="file.encoding" value="UTF-8"/>
     <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
     <property name="user.name" value="fernando"/>
-    <property name="java.class.path" value="/home/fernando/Java/sts-4.1.2.RELEASE/plugins/org.eclipse.m2e.maven.runtime_1.10.0.20181127-2120/jars/plexus-classworlds-2.5.2.jar"/>
+    <property name="java.class.path" value="/home/fernando/Java/sts-4.1.2.RELEASE/plugins/org.eclipse.m2e.maven.runtime_1.10.0.20181127-2120/jars/plexus-classworlds-2.5.2.jar:/home/fernando/Java/sts-4.1.2.RELEASE/configuration/org.eclipse.osgi/235/0/.cp/lib/javaagent-shaded.jar"/>
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/usr/lib/jvm/java-8-oracle/jre"/>
@@ -59,5 +60,5 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="contextLoads" classname="com.sysconard.Glojas.GlojasApplicationTests" time="0.093"/>
+  <testcase name="contextLoads" classname="com.sysconard.Glojas.GlojasApplicationTests" time="0.076"/>
 </testsuite>

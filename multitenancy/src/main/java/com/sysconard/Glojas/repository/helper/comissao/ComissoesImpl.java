@@ -1025,6 +1025,7 @@ public class ComissoesImpl implements ComissoesQueries {
 		List<String> operacao = new ArrayList<String>();
 		operacao.add("000999");
 		operacao.add("000007");
+		operacao.add("000001");
 		
 		Optional<BigDecimal> optional = Optional
 				.ofNullable(manager
@@ -1452,7 +1453,7 @@ public class ComissoesImpl implements ComissoesQueries {
 							+ "from ItensVendidos its join " 
 										+ "its.documento d "
 							+ "where its.loja = d.loja and " 
-											+ "d.tipo = '009' and "
+											+ "d.tipo in ('009', '002', '015') and "
 											+ "its.referencia.produto.secao = its.referencia.produto.grupo.secao and "
 											+ "its.referencia.custo.loja.codigo = its.loja.codigo and "
 											+ "d.dataEmissao between :dataInicial and :dataFinal " 
