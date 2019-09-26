@@ -1,9 +1,0 @@
-Manifest-Version: 1.0
-Implementation-Title: GLojas
-Implementation-Version: 1.0.0-SNAPSHOT
-Built-By: fernando
-Implementation-Vendor-Id: br.com.sysconard
-Build-Jdk: 1.8.0_201
-Created-By: Maven Integration for Eclipse
-Implementation-Vendor: Pivotal Software, Inc.
-
