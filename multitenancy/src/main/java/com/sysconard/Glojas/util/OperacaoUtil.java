@@ -8,6 +8,7 @@ public class OperacaoUtil {
 	public List<String> operacaoTroca() {
 		List<String> operacaoTroca = new ArrayList<String>();
 		operacaoTroca.add("000015");
+		operacaoTroca.add("000048");
 		return operacaoTroca;
 	}
 
