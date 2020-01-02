@@ -25,16 +25,16 @@
       "type": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$Xa"
     },
     {
-      "sourceType": "com.sysconard.Glojas.config.MultitenancyProperties",
-      "name": "spring.multitenancy.datasource2",
-      "sourceMethod": "public org.springframework.boot.autoconfigure.jdbc.DataSourceProperties getDatasource2() ",
-      "type": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
-    },
-    {
       "sourceType": "com.sysconard.Glojas.config.DataSourceConfig",
       "name": "spring.multitenancy.datasource2",
       "sourceMethod": "public javax.sql.DataSource dataSource2() ",
       "type": "javax.sql.DataSource"
+    },
+    {
+      "sourceType": "com.sysconard.Glojas.config.MultitenancyProperties",
+      "name": "spring.multitenancy.datasource2",
+      "sourceMethod": "public org.springframework.boot.autoconfigure.jdbc.DataSourceProperties getDatasource2() ",
+      "type": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
     },
     {
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties",
