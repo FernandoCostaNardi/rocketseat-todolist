@@ -1,11 +1,12 @@
 package com.sysconard.Glojas.repository.helper.documento;
 
-import java.math.BigDecimal;
-import java.text.ParseException;
-import java.util.List;
-
 import com.sysconard.Glojas.DTO.VendaContribucaoMarca;
 import com.sysconard.Glojas.DTO.VendasTotaisDTO;
+import com.sysconard.Glojas.DTO.vendas.UnicoValorDTO;
+
+import java.math.BigDecimal;
+import java.sql.Timestamp;
+import java.util.List;
 
 public interface DocumentosQueries {
 
@@ -43,6 +44,8 @@ public interface DocumentosQueries {
 	
 	List<VendaContribucaoMarca> SomaContribuicaoSubGrupoPorPeriodo_jab(String dataEmissaoInicial, String dataEmissaoFinal);
 
+	UnicoValorDTO valorTotal(List<String> tipo, List<String> operacao, Timestamp dataInicial, Timestamp dataFinal);
 
+	UnicoValorDTO valorTotalTroca(List<String> tipo, List<String> operacao, Timestamp dataInicial, Timestamp dataFinal);
 
 }

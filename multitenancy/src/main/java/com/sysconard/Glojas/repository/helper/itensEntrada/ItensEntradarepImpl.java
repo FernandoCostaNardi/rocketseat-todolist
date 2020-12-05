@@ -1,6 +1,9 @@
 package com.sysconard.Glojas.repository.helper.itensEntrada;
 
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -27,7 +30,7 @@ public class ItensEntradarepImpl  implements ItensEntradarepQueries {
 	List<Long> lojasJab = lojasClientesUtil.lojasJab();
 	
 	Timestamp hoje = datasUtil.SysDataDeHoje();
-	
+
 	@Override
 	public List<TrocasDetalhadasDTO> trocasDetalhadasDoDia_jab() {
 		String jpql = "select new com.sysconard.Glojas.DTO.TrocasDetalhadasDTO( " + "d.codigo " + ", d.numeroNota "
@@ -38,8 +41,10 @@ public class ItensEntradarepImpl  implements ItensEntradarepQueries {
 				+ " d.loja.codigo IN (:loja) " + "order by d.loja.codigo";
 
 		List<TrocasDetalhadasDTO> trocasDia = manager.createQuery(jpql, TrocasDetalhadasDTO.class)
-				.setParameter("operacaoTroca", operacaoTroca).setParameter("tipoTroca", tipoTroca)
-				.setParameter("dataEmissao", hoje).setParameter("loja", lojasJab).getResultList();
+				.setParameter("operacaoTroca", operacaoTroca)
+				.setParameter("tipoTroca", tipoTroca)
+				.setParameter("dataEmissao", hoje)
+				.setParameter("loja", lojasJab).getResultList();
 
 		return trocasDia;
 	}

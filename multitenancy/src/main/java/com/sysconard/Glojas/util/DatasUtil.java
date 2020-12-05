@@ -4,6 +4,7 @@ import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAdjusters;
@@ -119,13 +120,8 @@ public class DatasUtil {
 	}
 
 	public Timestamp SysDataDeHoje() {
-		Timestamp hoje = null;
-		try {
-			hoje = conversordeTimeStamp(diaDeHoje());
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
-		return hoje;
+		LocalDate now = LocalDate.now();
+		return Timestamp.valueOf(now.atStartOfDay());
 	}
 	
 	public Timestamp SysDataPrimeiroDiaDoMesAtual(){

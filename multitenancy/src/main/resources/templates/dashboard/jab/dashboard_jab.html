@@ -41,28 +41,28 @@
                            <div class="circle-tile-number text-faded">
                                <div class="table-responsive  bw-tabela-simples" >
 							    	<table class="table">
-								        <tbody th:each="somaVenda : ${somaVendasDoDiaporLoja}">
-								            <tr >
-								                <td 	class="dashboardLabel">Vendas: </td>
-								                <td	class="dashboardValor" 
-								                		th:text="'R$ ' + ${{(somaVenda.valorVenda  != null ? somaVenda.valorVenda : 0) + (somaVenda.valorVendaDanfe != null ? somaVenda.valorVendaDanfe : 0)}}">
-								                </td>     
-								                <td 	class="dashboardEspacamento"></td>      
-								            </tr>
-								            <tr>
-								                <td 	class="dashboardLabel">Trocas: </td>
-								                <td  	class="dashboardValor" 
-								                		th:text="'R$ ' + ${{somaVenda.valorTroca != null ? somaVenda.valorTroca : '0,00'}}">
-								                </td>
-								                <td class="dashboardEspacamento"></td>      
-								            </tr>
-								            <tr>
-                                               <td 	class="dashboardLabel">Total: </td>
-                                               <td  	class="dashboardValor" 
-                                               			th:text="'R$ ' + ${{((somaVenda.valorVenda  != null ? somaVenda.valorVenda : 0) + (somaVenda.valorVendaDanfe != null ? somaVenda.valorVendaDanfe : 0)) - (somaVenda.valorTroca != null ? somaVenda.valorTroca : 0)}}">
-                                               	</td>
-                                               <td 	class="dashboardEspacamento"></td>      
-			                                </tr>
+								        <tbody>
+											<tr>
+												<td 	class="dashboardLabel">Vendas: </td>
+												<td	class="dashboardValor"
+													   th:text="'R$ ' + ${{(vendaDiaTotalDia.vendas)}}">
+											    </td>
+												<td 	class="dashboardEspacamento"></td>
+											</tr>
+											<tr>
+												<td 	class="dashboardLabel">Trocas: </td>
+												<td	class="dashboardValor"
+													   th:text="'R$ ' + ${{(vendaDiaTotalDia.trocas)}}">
+												</td>
+												<td 	class="dashboardEspacamento"></td>
+											</tr>
+											<tr>
+												<td 	class="dashboardLabel">Total: </td>
+												<td	class="dashboardValor"
+													   th:text="'R$ ' + ${{(vendaDiaTotalDia.total)}}">
+												</td>
+												<td 	class="dashboardEspacamento"></td>
+											</tr>
 								        </tbody>
 					    			</table>
 								</div>
@@ -72,6 +72,78 @@
                            		class="circle-tile-footer">Vendas totais do dia 
                            	<i class="fa fa-chevron-circle-right"></i>
                            </a>
+						   <span id="sparklineA"></span>
+						   <div class="circle-tile-description text-faded vendors-info">
+							   Vendedores
+						   </div>
+						   <div class="vendors-info-container">
+							   <div class="vendors-info-container-item">
+								   <div class="vendors-info-header">
+									   Vendedor com maior valor vendido:
+								   </div>
+								   <div class="vendors-info-body" th:text="${(funcionarioValorDia.nmFuncionario)}"></div>
+								   <div class="vendors-info-body-value" th:text="'R$ ' + ${{(funcionarioValorDia.vlTotal)}}"></div>
+						       </div>
+							   <div class="vendors-info-container-item">
+								   <div class="vendors-info-header">
+									   Vendedor com maior quantidade produto:
+								   </div>
+								   <div class="vendors-info-body" th:text="${(funcionarioQuantidadeDia.nmFuncionario)}"></div>
+								   <div class="vendors-info-body-value" th:text="'Qde: ' + ${funcionarioQuantidadeDia.qtProduto}"></div>
+							   </div>
+						   </div>
+						   <div class="vendors-info-container">
+							   <div class="vendors-info-container-item">
+								   <div class="vendors-info-header">
+									   Vendedor com maior valor em trocas:
+								   </div>
+								   <div class="vendors-info-body" th:text="${(funcionarioTrocaDia.nmFuncionario)}"></div>
+								   <div class="vendors-info-body-value" th:text="'R$: ' + ${{(funcionarioTrocaDia.vlTotal)}}"></div>
+							   </div>
+							   <div class="vendors-info-container-item">
+								   <div class="vendors-info-header">
+
+								   </div>
+								   <div class="vendors-info-body">
+
+								   </div>
+								   <div class="vendors-info-body-value">
+
+								   </div>
+							   </div>
+						   </div>
+
+						   <span id="sparklineA"></span>
+						   <a 	th:href="@{/vendas/{tenantid}/vendasTotaisDoDiaPorLoja_jab(tenantid=${tenantid})}"
+								 class="circle-tile-footer">Vendas totais do dia por vendedor
+							   <i class="fa fa-chevron-circle-right"></i>
+						   </a>
+						   <span id="sparklineA"></span>
+						   <div class="circle-tile-description text-faded vendors-info">
+							   Produtos
+						   </div>
+						   <div class="vendors-info-container">
+							   <div class="vendors-info-container-item">
+								   <div class="vendors-info-header">
+									   Produto mais vendido no dia:
+								   </div>
+								   <div class="vendors-info-body" th:text="${(produtoQuantidadeDia.nmProduto)}"></div>
+								   <div class="vendors-info-body-value" th:text="'Qde: ' + ${produtoQuantidadeDia.qtProduto}"></div>
+							   </div>
+							   <div class="vendors-info-container-item">
+								   <div class="vendors-info-header">
+									   Produto com maior valor agregado vendido no dia:
+								   </div>
+								   <div class="vendors-info-body" th:text="${(produtoMaiorValorDia.nmProduto)}"></div>
+								   <div class="vendors-info-body-value" th:text="'R$: ' + ${{produtoMaiorValorDia.vlProduto}}"></div>
+							   </div>
+						   </div>
+						   </br>
+						   <span id="sparklineA"></span>
+						   <a 	th:href="@{/produtos/{tenantid}/produtos/vendas(tenantid=${tenantid})}"
+								 class="circle-tile-footer">Produtos vendidos no dia
+							   <i class="fa fa-chevron-circle-right"></i>
+						   </a>
                        </div>
                    </div>
                </div>
@@ -90,28 +162,28 @@
                            <div class="circle-tile-number text-faded">
                                <div class="table-responsive  bw-tabela-simples" >
                                    <table class="table">
-	                                    <tbody th:each="somaVenda : ${somaVendasDoMesPorLoja}">
-	                                        <tr>
-	                                            <td 	class="dashboardLabel">Vendas: </td>
-	                                            <td 	class="dashboardValor"  
-	                                           			th:text="'R$ ' + ${{(somaVenda.valorVenda  != null ? somaVenda.valorVenda : 0) + (somaVenda.valorVendaDanfe != null ? somaVenda.valorVendaDanfe : 0)}}">
-	                                            </td>
-	                                            <td 	class="dashboardEspacamento"></td>      
-	                                        </tr>
-	                                        <tr>
-	                                            <td 	class="dashboardLabel">Trocas: </td>
-	                                            <td  	class="dashboardValor" 
-	                                           			th:text="'R$ ' + ${{somaVenda.valorTroca != null ? somaVenda.valorTroca : '0,00'}}">
-	                                           	</td>
-	                                            <td 	class="dashboardEspacamento"></td>      
-	                                          </tr>
-	                                        <tr>
-	                                            <td 	class="dashboardLabel">Total: </td>
-	                                            <td  	class="dashboardValor" 
-	                                           			th:text="'R$ ' + ${{((somaVenda.valorVenda  != null ? somaVenda.valorVenda : 0) + (somaVenda.valorVendaDanfe != null ? somaVenda.valorVendaDanfe : 0)) - (somaVenda.valorTroca != null ? somaVenda.valorTroca : 0)}}">
-	                                           	</td>
-	                                            <td 	class="dashboardEspacamento"></td>      
-	                                        </tr>
+	                                    <tbody>
+											<tr>
+												<td 	class="dashboardLabel">Vendas: </td>
+												<td	class="dashboardValor"
+													   th:text="'R$ ' + ${{(vendaDiaTotalMes.vendas)}}">
+												</td>
+												<td 	class="dashboardEspacamento"></td>
+											</tr>
+											<tr>
+												<td 	class="dashboardLabel">Trocas: </td>
+												<td	class="dashboardValor"
+													   th:text="'R$ ' + ${{(vendaDiaTotalMes.trocas)}}">
+												</td>
+												<td 	class="dashboardEspacamento"></td>
+											</tr>
+											<tr>
+												<td 	class="dashboardLabel">Total: </td>
+												<td	class="dashboardValor"
+													   th:text="'R$ ' + ${{(vendaDiaTotalMes.total)}}">
+												</td>
+												<td 	class="dashboardEspacamento"></td>
+											</tr>
 	                                    </tbody>
                                    </table>
                                </div>
@@ -121,6 +193,78 @@
                            		class="circle-tile-footer">Vendas totais do mês 
                            		<i class="fa fa-chevron-circle-right"></i>
                            	</a>
+						   <span id="sparklineA"></span>
+						   <div class="circle-tile-description text-faded vendors-info">
+							   Vendedores
+						   </div>
+						   <div class="vendors-info-container">
+							   <div class="vendors-info-container-item-green">
+								   <div class="vendors-info-header-white">
+									   Vendedor com maior valor vendido:
+								   </div>
+								   <div class="vendors-info-body" th:text="${(funcionarioValorMes.nmFuncionario)}"></div>
+								   <div class="vendors-info-body-value" th:text="'R$ ' + ${{(funcionarioValorMes.vlTotal)}}"></div>
+							   </div>
+							   <div class="vendors-info-container-item-green">
+								   <div class="vendors-info-header-white">
+									   Vendedor com maior quantidade produto:
+								   </div>
+								   <div class="vendors-info-body" th:text="${(funcionarioQuantidadeMes.nmFuncionario)}"></div>
+								   <div class="vendors-info-body-value" th:text="'Qde: ' + ${(funcionarioQuantidadeMes.qtProduto)}"></div>
+							   </div>
+						   </div>
+						   <div class="vendors-info-container">
+							   <div class="vendors-info-container-item-green">
+								   <div class="vendors-info-header-white">
+									   Vendedor com maior valor em trocas:
+								   </div>
+								   <div class="vendors-info-body" th:text="${(funcionarioTrocaMes.nmFuncionario)}"></div>
+								   <div class="vendors-info-body-value" th:text="'R$: ' + ${{(funcionarioTrocaMes.vlTotal)}}"></div>
+							   </div>
+							   <div class="vendors-info-container-item-green">
+								   <div class="vendors-info-header-white">
+
+								   </div>
+								   <div class="vendors-info-body">
+
+								   </div>
+								   <div class="vendors-info-body-value">
+
+								   </div>
+							   </div>
+						   </div>
+
+						   <span id="sparklineA"></span>
+						   <a 	th:href="@{/vendas/{tenantid}/vendasTotaisDoDiaPorLoja_jab(tenantid=${tenantid})}"
+								 class="circle-tile-footer">Vendas totais do mês por vendedor
+							   <i class="fa fa-chevron-circle-right"></i>
+						   </a>
+						   <span id="sparklineA"></span>
+						   <div class="circle-tile-description text-faded vendors-info">
+							   Produtos
+						   </div>
+						   <div class="vendors-info-container">
+							   <div class="vendors-info-container-item-green">
+								   <div class="vendors-info-header-white">
+									   Produto mais vendido no mês:
+								   </div>
+								   <div class="vendors-info-body" th:text="${(produtoQuantidadeMes.nmProduto)}"></div>
+								   <div class="vendors-info-body-value" th:text="'Qde: ' + ${produtoQuantidadeMes.qtProduto}"></div>
+							   </div>
+							   <div class="vendors-info-container-item-green">
+								   <div class="vendors-info-header-white">
+									   Produto com maior valor agregado vendido no mês:
+								   </div>
+								   <div class="vendors-info-body" th:text="${(produtoMaiorValorMes.nmProduto)}"></div>
+								   <div class="vendors-info-body-value" th:text="'R$: ' + ${{produtoMaiorValorMes.vlProduto}}"></div>
+							   </div>
+						   </div>
+						   </br>
+						   <span id="sparklineA"></span>
+						   <a 	th:href="@{/produtos/{tenantid}/produtos/vendas(tenantid=${tenantid})}"
+								 class="circle-tile-footer">Produtos vendidos no mês
+							   <i class="fa fa-chevron-circle-right"></i>
+						   </a>
                        </div>
                    </div>
                </div>
@@ -140,27 +284,27 @@
                                <div class="table-responsive  bw-tabela-simples" >
                                    <table class="table">
                                        <tbody>
-                                           <tr th:each="somaVenda : ${somaVendasDoAnoporLoja}">
-                                               <td 	class="dashboardLabel">Vendas: </td>
-                                               <td 	class="dashboardValor" 
-                                               			th:text="'R$ ' + ${{(somaVenda.valorVenda  != null ? somaVenda.valorVenda : 0) + (somaVenda.valorVendaDanfe != null ? somaVenda.valorVendaDanfe : 0)}}">
-                                               </td>
-                                               <td 	class="dashboardEspacamento"></td>      
-                                           </tr>
-                                           <tr th:each="somaVenda : ${somaVendasDoAnoporLoja}">
-                                               <td 	class="dashboardLabel">Trocas: </td>
-                                               <td  	class="dashboardValor" 
-                                               			th:text="'R$ ' + ${{somaVenda.valorTroca != null ? somaVenda.valorTroca : '0,00'}}">
-                                               </td>
-                                               <td 	class="dashboardEspacamento"></td>      
-                                           </tr>
-                                           <tr th:each="somaVenda : ${somaVendasDoAnoporLoja}">
-                                               <td 	class="dashboardLabel">Total: </td>
-                                               <td  	class="dashboardValor" 
-                                               			th:text="'R$ ' + ${{((somaVenda.valorVenda  != null ? somaVenda.valorVenda : 0) + (somaVenda.valorVendaDanfe != null ? somaVenda.valorVendaDanfe : 0)) - (somaVenda.valorTroca != null ? somaVenda.valorTroca : 0)}}">
-                                               </td>
-                                               <td 	class="dashboardEspacamento"></td>      
-                                           </tr>
+										   <tr>
+											   <td 	class="dashboardLabel">Vendas: </td>
+											   <td	class="dashboardValor"
+													  th:text="'R$ ' + ${{(vendaDiaTotalAno.vendas)}}">
+											   </td>
+											   <td 	class="dashboardEspacamento"></td>
+										   </tr>
+										   <tr>
+											   <td 	class="dashboardLabel">Trocas: </td>
+											   <td	class="dashboardValor"
+													  th:text="'R$ ' + ${{(vendaDiaTotalAno.trocas)}}">
+											   </td>
+											   <td 	class="dashboardEspacamento"></td>
+										   </tr>
+										   <tr>
+											   <td 	class="dashboardLabel">Total: </td>
+											   <td	class="dashboardValor"
+													  th:text="'R$ ' + ${{(vendaDiaTotalAno.total)}}">
+											   </td>
+											   <td 	class="dashboardEspacamento"></td>
+										   </tr>
                                        </tbody>
                                    </table>
                                </div>
@@ -170,6 +314,78 @@
                            		class="circle-tile-footer">Vendas totais do ano 
                            		<i class="fa fa-chevron-circle-right"></i>
                            	</a>
+						   <span id="sparklineA"></span>
+						   <div class="circle-tile-description text-faded vendors-info">
+							   Vendedores
+						   </div>
+						   <div class="vendors-info-container">
+							   <div class="vendors-info-container-item-red">
+								   <div class="vendors-info-header-white">
+									   Vendedor com maior valor vendido:
+								   </div>
+								   <div class="vendors-info-body" th:text="${(funcionarioValorAno.nmFuncionario)}"></div>
+								   <div class="vendors-info-body-value" th:text="'R$ ' + ${{(funcionarioValorAno.vlTotal)}}"></div>
+							   </div>
+							   <div class="vendors-info-container-item-red">
+								   <div class="vendors-info-header-white">
+									   Vendedor com maior quantidade produto:
+								   </div>
+								   <div class="vendors-info-body" th:text="${(funcionarioQuantidadeAno.nmFuncionario)}"></div>
+								   <div class="vendors-info-body-value" th:text="'Qde: ' + ${(funcionarioQuantidadeAno.qtProduto)}"></div>
+							   </div>
+						   </div>
+						   <div class="vendors-info-container">
+							   <div class="vendors-info-container-item-red">
+								   <div class="vendors-info-header-white">
+									   Vendedor com maior valor em trocas:
+								   </div>
+								   <div class="vendors-info-body" th:text="${(funcionarioTrocaAno.nmFuncionario)}"></div>
+								   <div class="vendors-info-body-value" th:text="'R$: ' + ${{(funcionarioTrocaAno.vlTotal)}}"></div>
+							   </div>
+							   <div class="vendors-info-container-item-red">
+								   <div class="vendors-info-header-white">
+
+								   </div>
+								   <div class="vendors-info-body">
+
+								   </div>
+								   <div class="vendors-info-body-value">
+
+								   </div>
+							   </div>
+						   </div>
+
+						   <span id="sparklineA"></span>
+						   <a 	th:href="@{/vendas/{tenantid}/vendasTotaisDoDiaPorLoja_jab(tenantid=${tenantid})}"
+								 class="circle-tile-footer">Vendas totais do ano por vendedor
+							   <i class="fa fa-chevron-circle-right"></i>
+						   </a>
+						   <span id="sparklineA"></span>
+						   <div class="circle-tile-description text-faded vendors-info">
+							   Produtos
+						   </div>
+						   <div class="vendors-info-container">
+							   <div class="vendors-info-container-item-red">
+								   <div class="vendors-info-header-white">
+									   Produto mais vendido no ano:
+								   </div>
+								   <div class="vendors-info-body" th:text="${(produtoQuantidadeAno.nmProduto)}"></div>
+								   <div class="vendors-info-body-value" th:text="'Qde: ' + ${produtoQuantidadeAno.qtProduto}"></div>
+							   </div>
+							   <div class="vendors-info-container-item-red">
+								   <div class="vendors-info-header-white">
+									   Produto com maior valor agregado vendido no ano:
+								   </div>
+								   <div class="vendors-info-body" th:text="${(produtoMaiorValorAno.nmProduto)}"></div>
+								   <div class="vendors-info-body-value" th:text="'R$: ' + ${{produtoMaiorValorAno.vlProduto}}"></div>
+							   </div>
+						   </div>
+						   </br>
+						   <span id="sparklineA"></span>
+						   <a 	th:href="@{/produtos/{tenantid}/produtos/vendas(tenantid=${tenantid})}"
+								 class="circle-tile-footer">Produtos vendidos no ano
+							   <i class="fa fa-chevron-circle-right"></i>
+						   </a>
                        </div>
                    </div>
                </div>

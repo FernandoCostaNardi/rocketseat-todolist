@@ -10,12 +10,19 @@ import javax.persistence.PersistenceContext;
 
 import com.sysconard.Glojas.DTO.VendaContribucaoMarca;
 import com.sysconard.Glojas.DTO.VendasTotaisDTO;
+import com.sysconard.Glojas.DTO.vendas.UnicoValorDTO;
+import com.sysconard.Glojas.model.Documento;
+import com.sysconard.Glojas.repository.Documentos;
 import com.sysconard.Glojas.util.DatasUtil;
 import com.sysconard.Glojas.util.LojasClientesUtil;
 import com.sysconard.Glojas.util.OperacaoUtil;
 import com.sysconard.Glojas.util.TipoUtil;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class DocumentosImpl implements DocumentosQueries{
+
+	@Autowired
+	private Documentos documentoRepository;
 
 	DatasUtil datasUtil = new DatasUtil();
 	OperacaoUtil operacaoUtil = new OperacaoUtil();
@@ -89,6 +96,26 @@ public class DocumentosImpl implements DocumentosQueries{
 
 		
 		return vendasDia;
+	}
+
+	//Busca de valor funcionando Dashboard
+	public UnicoValorDTO valorTotal(List<String> tipo, List<String> operacao, Timestamp dataInicial, Timestamp dataFinal){
+		return manager.createNamedQuery("totalVendas.recuperarTotal", UnicoValorDTO.class)
+				.setParameter("tipo", tipo)
+				.setParameter("operacao", operacao)
+				.setParameter("dataInicial", dataInicial)
+				.setParameter("dataFinal", dataFinal)
+				.getSingleResult();
+	}
+
+	//Busca de valor funcionando Dashboard
+	public UnicoValorDTO valorTotalTroca(List<String> tipo, List<String> operacao, Timestamp dataInicial, Timestamp dataFinal){
+		return manager.createNamedQuery("totalVendas.recuperarTotalTroca", UnicoValorDTO.class)
+				.setParameter("tipo", tipo)
+				.setParameter("operacao", operacao)
+				.setParameter("dataInicial", dataInicial)
+				.setParameter("dataFinal", dataFinal)
+				.getSingleResult();
 	}
 
 	@Override

@@ -3,6 +3,7 @@ package com.sysconard.Glojas.repository.helper.funcionario;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import com.sysconard.Glojas.DTO.dashboard.InfoVendedoresDashboardDTO;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.MatchMode;
@@ -19,6 +20,9 @@ import org.springframework.util.StringUtils;
 import com.sysconard.Glojas.model.Funcionario;
 import com.sysconard.Glojas.repository.filter.FuncionarioFilter;
 import com.sysconard.Glojas.repository.paginacao.PaginacaoUtil;
+
+import java.sql.Timestamp;
+import java.util.List;
 
 public class FuncionariosImpl implements FuncionariosQueries {
 
@@ -44,6 +48,36 @@ public class FuncionariosImpl implements FuncionariosQueries {
 		adicionarFiltro(filtro, criteria);
 
 		return new PageImpl<>(criteria.list(), pageable, total(filtro));
+	}
+
+	@Override
+	public List<InfoVendedoresDashboardDTO> recuperarValorTotalVendas(List<String> tipo, List<String> operacao, Timestamp dataInicial, Timestamp dataFinal) {
+		return manager.createNamedQuery("infoVendedores.recuperarVendedorValor", InfoVendedoresDashboardDTO.class)
+				.setParameter("tipo", tipo)
+				.setParameter("operacao", operacao)
+				.setParameter("dataInicial", dataInicial)
+				.setParameter("dataFinal", dataFinal)
+				.getResultList();
+	}
+
+	@Override
+	public List<InfoVendedoresDashboardDTO> recuperarQuantidadeProdutoVendido(List<String> tipo, List<String> operacao, Timestamp dataInicial, Timestamp dataFinal) {
+		return manager.createNamedQuery("infoVendedores.recuperarVendedorQuantidade", InfoVendedoresDashboardDTO.class)
+				.setParameter("tipo", tipo)
+				.setParameter("operacao", operacao)
+				.setParameter("dataInicial", dataInicial)
+				.setParameter("dataFinal", dataFinal)
+				.getResultList();
+	}
+
+	@Override
+	public List<InfoVendedoresDashboardDTO> recuperarTotalTrocas(List<String> tipo, List<String> operacao, Timestamp dataInicial, Timestamp dataFinal) {
+		return manager.createNamedQuery("infoVendedores.recuperarVendedorTroca", InfoVendedoresDashboardDTO.class)
+				.setParameter("tipo", tipo)
+				.setParameter("operacao", operacao)
+				.setParameter("dataInicial", dataInicial)
+				.setParameter("dataFinal", dataFinal)
+				.getResultList();
 	}
 
 	private Long total(FuncionarioFilter filtro) {

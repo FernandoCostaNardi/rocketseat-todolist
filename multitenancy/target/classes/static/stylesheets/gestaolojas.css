@@ -64,7 +64,7 @@
 
 /*
 ######################
-# PADRÕES DE LAYOUT
+# PADRï¿½ES DE LAYOUT
 ######################
 */
 
@@ -209,7 +209,7 @@ h4{
 ######################
 */
 
-/*Colunas - Padrão de Tabelas */
+/*Colunas - Padrï¿½o de Tabelas */
 .gl-tabela-Padrao-Titulos th{
      font-size: 14px;
      color: #428bca;
@@ -394,7 +394,7 @@ h4{
 }
 
 
-/*Colunas - Pesquisa de Vendas Detalhadas Por Período */
+/*Colunas - Pesquisa de Vendas Detalhadas Por Perï¿½odo */
 
 .gl-tabela-vendasDetalhadasPorPeriodo-codigoTitulo {
      width: 80px;
@@ -542,7 +542,7 @@ h4{
     text-align: right;
 }
 
-/*Colunas - Comissões Totais por Período */
+/*Colunas - Comissï¿½es Totais por Perï¿½odo */
 
 .gl-tabela-comissaoTotalPorPeriodo-lojaTitulo {
      width: 200px;
@@ -696,7 +696,7 @@ h4{
      text-align: center;
 }
 
-/*Colunas - Margem Contribuição Marcas Diárias  */
+/*Colunas - Margem Contribuiï¿½ï¿½o Marcas Diï¿½rias  */
 
 .gl-tabela-margemContribuicaoMarcasDiaria-MarcaTitulo {
      width: 70px;
@@ -790,7 +790,7 @@ h4{
   display: block;
 }
 
-/*BOX - Mês */
+/*BOX - Mï¿½s */
 
 .sc-box__mes {
   padding: 20px;
@@ -912,6 +912,9 @@ h4{
 .circle-tile {
     margin-bottom: 15px;
     text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .circle-tile-heading {
@@ -923,6 +926,78 @@ h4{
     border-radius: 100%;
     color: #fff;
     transition: all ease-in-out .3s;
+}
+
+.vendors-info{
+    margin-top: 30px;
+}
+
+.vendors-info-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-flow: wrap;
+}
+
+.vendors-info-container-item{
+    width: 45%;
+    height: 80px;
+    background-color: #34495E;
+    margin: 10px;
+    box-sizing: border-box;
+    font-size: 12px;
+}
+
+.vendors-info-container-item-green{
+    width: 45%;
+    height: 80px;
+    background-color: #16A085;
+    margin: 10px;
+    box-sizing: border-box;
+    font-size: 12px;
+}
+
+.vendors-info-container-item-red{
+    width: 45%;
+    height: 80px;
+    background-color: #E74C3C;
+    margin: 10px;
+    box-sizing: border-box;
+    font-size: 12px;
+}
+
+.vendors-info-header{
+    font-size: 12px;
+    font-weight: bold;
+    color: #aaaaaa;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: left;
+}
+
+.vendors-info-header-white{
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: left;
+}
+
+.vendors-info-body{
+    font-size: 16px;
+    font-weight: bold;
+    color: yellow;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: left;
+}
+
+.vendors-info-body-value{
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: left;
 }
 
 /* -- Background Helper Classes */
@@ -968,6 +1043,8 @@ h4{
 }
 .circle-tile-description {
     text-transform: uppercase;
+    font-weight: bold !important;
+    color: white !important;
 }
 
 .text-faded {

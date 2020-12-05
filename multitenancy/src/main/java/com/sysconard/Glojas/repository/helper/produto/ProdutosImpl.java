@@ -1,12 +1,15 @@
 package com.sysconard.Glojas.repository.helper.produto;
 
 import java.math.BigDecimal;
+import java.sql.Timestamp;
 import java.util.List;
 import java.util.Optional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import com.sysconard.Glojas.DTO.dashboard.InfoProdutoDashboardDTO;
+import com.sysconard.Glojas.DTO.dashboard.InfoVendedoresDashboardDTO;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.MatchMode;
@@ -145,6 +148,26 @@ return pesquisaProdutos;
 						.getSingleResult();
 
 		return produto;
+	}
+
+	@Override
+	public List<InfoProdutoDashboardDTO> recuperarQuantidadeProdutosVendidos(List<String> tipo, List<String> operacao, Timestamp dataInicial, Timestamp dataFinal) {
+		return manager.createNamedQuery("infoProduto.recuperarQuantidadeProduto", InfoProdutoDashboardDTO.class)
+				.setParameter("tipo", tipo)
+				.setParameter("operacao", operacao)
+				.setParameter("dataInicial", dataInicial)
+				.setParameter("dataFinal", dataFinal)
+				.getResultList();
+	}
+
+	@Override
+	public List<InfoProdutoDashboardDTO> recuperarListaProdutosVendidos(List<String> tipo, List<String> operacao, Timestamp dataInicial, Timestamp dataFinal) {
+		return manager.createNamedQuery("infoVendedores.recuperarListaVenda", InfoProdutoDashboardDTO.class)
+				.setParameter("tipo", tipo)
+				.setParameter("operacao", operacao)
+				.setParameter("dataInicial", dataInicial)
+				.setParameter("dataFinal", dataFinal)
+				.getResultList();
 	}
 
 }
