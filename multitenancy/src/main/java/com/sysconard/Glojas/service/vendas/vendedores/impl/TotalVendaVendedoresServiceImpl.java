@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,7 +28,8 @@ public class TotalVendaVendedoresServiceImpl implements TotalVendaVendedoresServ
     List<String> tipoPDVEDanfe = tipoUtil.tipoPDVEDanfe();
 
     DatasUtil datasUtil = new DatasUtil();
-    Timestamp hoje = datasUtil.SysDataDeHoje();
+    LocalDate now = LocalDate.now();
+    Timestamp hoje = Timestamp.valueOf(now.atStartOfDay());
     Timestamp primeiroDiaDoMesAtual = datasUtil.SysDataPrimeiroDiaDoMesAtual();
     Timestamp ultimoDiaDoMesAtual = datasUtil.SysDataUltimoDiaDoMesAtual();
     Timestamp primeiroDiaDoAnoAtual = datasUtil.SysDataPrimeiroDiaDoAnoAtual();

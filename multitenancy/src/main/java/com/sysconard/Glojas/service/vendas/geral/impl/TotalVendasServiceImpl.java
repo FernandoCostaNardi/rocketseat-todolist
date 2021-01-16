@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -27,7 +28,8 @@ public class TotalVendasServiceImpl implements TotalVendasService {
     List<String> tipoPDVEDanfe = tipoUtil.tipoPDVEDanfe();
 
     DatasUtil datasUtil = new DatasUtil();
-    Timestamp hoje = datasUtil.SysDataDeHoje();
+    LocalDate now = LocalDate.now();
+    Timestamp hoje = Timestamp.valueOf(now.atStartOfDay());
     Timestamp primeiroDiaDoMesAtual = datasUtil.SysDataPrimeiroDiaDoMesAtual();
     Timestamp ultimoDiaDoMesAtual = datasUtil.SysDataUltimoDiaDoMesAtual();
     Timestamp primeiroDiaDoAnoAtual = datasUtil.SysDataPrimeiroDiaDoAnoAtual();

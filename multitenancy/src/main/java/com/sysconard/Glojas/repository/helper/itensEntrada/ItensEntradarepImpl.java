@@ -28,8 +28,9 @@ public class ItensEntradarepImpl  implements ItensEntradarepQueries {
 	List<String> tipoTroca = tipoUtil.tipoTroca();
 	List<String> operacaoTroca = operacaoUtil.operacaoTroca();
 	List<Long> lojasJab = lojasClientesUtil.lojasJab();
-	
-	Timestamp hoje = datasUtil.SysDataDeHoje();
+
+	LocalDate now = LocalDate.now();
+	Timestamp hoje = Timestamp.valueOf(now.atStartOfDay());
 
 	@Override
 	public List<TrocasDetalhadasDTO> trocasDetalhadasDoDia_jab() {

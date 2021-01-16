@@ -1,6 +1,6 @@
 package com.sysconard.Glojas.service.vendas.produtos.impl;
 
-import com.sysconard.Glojas.DTO.dashboard.InfoProdutoDashboardDTO;
+import com.sysconard.Glojas.DTO.dashboard.InfoProdutoDashboard;
 import com.sysconard.Glojas.repository.Produtos;
 import com.sysconard.Glojas.service.vendas.produtos.ProdutosVendidosService;
 import com.sysconard.Glojas.util.DatasUtil;
@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,17 +28,18 @@ public class ProdutosVendidosServiceImpl implements ProdutosVendidosService {
     List<String> tipoPDVEDanfe = tipoUtil.tipoPDVEDanfe();
 
     DatasUtil datasUtil = new DatasUtil();
-    Timestamp hoje = datasUtil.SysDataDeHoje();
+    LocalDate now = LocalDate.now();
+    Timestamp hoje = Timestamp.valueOf(now.atStartOfDay());
     Timestamp primeiroDiaDoMesAtual = datasUtil.SysDataPrimeiroDiaDoMesAtual();
     Timestamp ultimoDiaDoMesAtual = datasUtil.SysDataUltimoDiaDoMesAtual();
     Timestamp primeiroDiaDoAnoAtual = datasUtil.SysDataPrimeiroDiaDoAnoAtual();
     Timestamp ultimoDiaDoAnoAtual = datasUtil.SysDataUltimoDiaDoAnoAtual();
 
-    List<InfoProdutoDashboardDTO> list = new ArrayList<>();
+    List<InfoProdutoDashboard> list = new ArrayList<>();
 
     @Override
-    public List<InfoProdutoDashboardDTO> totalQuantidadeProdutoVendaDia() {
-        List<InfoProdutoDashboardDTO> total = produtoRepository.recuperarQuantidadeProdutosVendidos(tipoPDVEDanfe, operacaoVenda, hoje, hoje);
+    public List<InfoProdutoDashboard> totalQuantidadeProdutoVendaDia() {
+        List<InfoProdutoDashboard> total = produtoRepository.recuperarQuantidadeProdutosVendidos(tipoPDVEDanfe, operacaoVenda, hoje, hoje);
         if(total == null){
             return list;
         }
@@ -45,8 +47,8 @@ public class ProdutosVendidosServiceImpl implements ProdutosVendidosService {
     }
 
     @Override
-    public List<InfoProdutoDashboardDTO> totalQuantidadeProdutoVendaMes() {
-        List<InfoProdutoDashboardDTO> total = produtoRepository.recuperarQuantidadeProdutosVendidos(tipoPDVEDanfe, operacaoVenda, primeiroDiaDoMesAtual, ultimoDiaDoMesAtual);
+    public List<InfoProdutoDashboard> totalQuantidadeProdutoVendaMes() {
+        List<InfoProdutoDashboard> total = produtoRepository.recuperarQuantidadeProdutosVendidos(tipoPDVEDanfe, operacaoVenda, primeiroDiaDoMesAtual, ultimoDiaDoMesAtual);
         if(total == null){
             return list;
         }
@@ -54,8 +56,8 @@ public class ProdutosVendidosServiceImpl implements ProdutosVendidosService {
     }
 
     @Override
-    public List<InfoProdutoDashboardDTO> totalQuantidadeProdutoVendaAno() {
-        List<InfoProdutoDashboardDTO> total = produtoRepository.recuperarQuantidadeProdutosVendidos(tipoPDVEDanfe, operacaoVenda, primeiroDiaDoAnoAtual, ultimoDiaDoAnoAtual);
+    public List<InfoProdutoDashboard> totalQuantidadeProdutoVendaAno() {
+        List<InfoProdutoDashboard> total = produtoRepository.recuperarQuantidadeProdutosVendidos(tipoPDVEDanfe, operacaoVenda, primeiroDiaDoAnoAtual, ultimoDiaDoAnoAtual);
         if(total == null){
             return list;
         }
@@ -63,8 +65,8 @@ public class ProdutosVendidosServiceImpl implements ProdutosVendidosService {
     }
 
     @Override
-    public List<InfoProdutoDashboardDTO> listaVendasDoDia() {
-        List<InfoProdutoDashboardDTO> total = produtoRepository.recuperarListaProdutosVendidos(tipoPDVEDanfe, operacaoVenda, hoje, hoje);
+    public List<InfoProdutoDashboard> listaVendasDoDia() {
+        List<InfoProdutoDashboard> total = produtoRepository.recuperarListaProdutosVendidos(tipoPDVEDanfe, operacaoVenda, hoje, hoje);
         if(total == null){
             return list;
         }
@@ -72,8 +74,8 @@ public class ProdutosVendidosServiceImpl implements ProdutosVendidosService {
     }
 
     @Override
-    public List<InfoProdutoDashboardDTO> listaVendasDoMes() {
-        List<InfoProdutoDashboardDTO> total = produtoRepository.recuperarListaProdutosVendidos(tipoPDVEDanfe, operacaoVenda, primeiroDiaDoMesAtual, ultimoDiaDoMesAtual);
+    public List<InfoProdutoDashboard> listaVendasDoMes() {
+        List<InfoProdutoDashboard> total = produtoRepository.recuperarListaProdutosVendidos(tipoPDVEDanfe, operacaoVenda, primeiroDiaDoMesAtual, ultimoDiaDoMesAtual);
         if(total == null){
             return list;
         }
@@ -81,8 +83,8 @@ public class ProdutosVendidosServiceImpl implements ProdutosVendidosService {
     }
 
     @Override
-    public List<InfoProdutoDashboardDTO> listaVendasDoAno() {
-        List<InfoProdutoDashboardDTO> total = produtoRepository.recuperarListaProdutosVendidos(tipoPDVEDanfe, operacaoVenda, primeiroDiaDoAnoAtual, ultimoDiaDoAnoAtual);
+    public List<InfoProdutoDashboard> listaVendasDoAno() {
+        List<InfoProdutoDashboard> total = produtoRepository.recuperarListaProdutosVendidos(tipoPDVEDanfe, operacaoVenda, primeiroDiaDoAnoAtual, ultimoDiaDoAnoAtual);
         if(total == null){
             return list;
         }

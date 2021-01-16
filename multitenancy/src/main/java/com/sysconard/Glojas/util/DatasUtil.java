@@ -119,7 +119,7 @@ public class DatasUtil {
 		return timestamp;
 	}
 
-	public Timestamp SysDataDeHoje() {
+	public Timestamp SysDataDeHojeS() {
 		LocalDate now = LocalDate.now();
 		return Timestamp.valueOf(now.atStartOfDay());
 	}

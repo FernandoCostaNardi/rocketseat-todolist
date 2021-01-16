@@ -1,14 +1,14 @@
 package com.sysconard.Glojas.service.dashboard;
 
-import com.sysconard.Glojas.DTO.dashboard.InfoProdutoDashboardDTO;
+import com.sysconard.Glojas.DTO.dashboard.InfoProdutoDashboard;
 
 public interface VendaProdutoDashboardService {
 
-    InfoProdutoDashboardDTO produtoMaisVendidoDoDia();
-    InfoProdutoDashboardDTO produtoMaisVendidoDoMes();
-    InfoProdutoDashboardDTO produtoMaisVendidoDoAno();
+    InfoProdutoDashboard produtoMaisVendidoDoDia();
+    InfoProdutoDashboard produtoMaisVendidoDoMes();
+    InfoProdutoDashboard produtoMaisVendidoDoAno();
 
-    InfoProdutoDashboardDTO produtoComMaiorValorAgregadoVendidoNodia();
-    InfoProdutoDashboardDTO produtoComMaiorValorAgregadoVendidoNoMes();
-    InfoProdutoDashboardDTO produtoComMaiorValorAgregadoVendidoNoAno();
+    InfoProdutoDashboard produtoComMaiorValorAgregadoVendidoNodia();
+    InfoProdutoDashboard produtoComMaiorValorAgregadoVendidoNoMes();
+    InfoProdutoDashboard produtoComMaiorValorAgregadoVendidoNoAno();
 }

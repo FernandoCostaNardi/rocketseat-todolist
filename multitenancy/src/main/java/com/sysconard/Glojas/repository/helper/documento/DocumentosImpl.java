@@ -2,6 +2,7 @@ package com.sysconard.Glojas.repository.helper.documento;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -42,7 +43,8 @@ public class DocumentosImpl implements DocumentosQueries{
 	
 	List<Long> lojasJab = lojasClientesUtil.lojasJab();
 
-	Timestamp hoje = datasUtil.SysDataDeHoje();
+	LocalDate now = LocalDate.now();
+	Timestamp hoje = Timestamp.valueOf(now.atStartOfDay());
 	Timestamp primeiroDiaDoMesAtual = datasUtil.SysDataPrimeiroDiaDoMesAtual();
 	Timestamp ultimoDiaDoMesAtual = datasUtil.SysDataUltimoDiaDoMesAtual();
 	Timestamp primeiroDiaDoAnoAtual = datasUtil.SysDataPrimeiroDiaDoAnoAtual();

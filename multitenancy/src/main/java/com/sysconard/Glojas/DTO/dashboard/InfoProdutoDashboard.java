@@ -7,37 +7,37 @@ import java.math.BigDecimal;
 
 @Data
 @Builder
-public class InfoProdutoDashboardDTO {
+public class InfoProdutoDashboard {
 
     private String cdProduto;
     private String nmProduto;
     private Integer qtProduto;
     private BigDecimal vlProduto;
 
-    public InfoProdutoDashboardDTO() {
+    public InfoProdutoDashboard() {
     }
 
-    public InfoProdutoDashboardDTO(String cdProduto, String nmProduto, Integer qtProduto) {
+    public InfoProdutoDashboard(String cdProduto, String nmProduto, Integer qtProduto) {
         this.cdProduto = cdProduto;
         this.nmProduto = nmProduto;
         this.qtProduto = qtProduto;
     }
 
-    public InfoProdutoDashboardDTO(String cdProduto, String nmProduto, BigDecimal vlProduto) {
+    public InfoProdutoDashboard(String cdProduto, String nmProduto, BigDecimal vlProduto) {
         this.cdProduto = cdProduto;
         this.nmProduto = nmProduto;
         this.vlProduto = vlProduto;
     }
 
-    public InfoProdutoDashboardDTO(String cdProduto, String nmProduto, Integer qtProduto, BigDecimal vlProduto) {
+    public InfoProdutoDashboard(String cdProduto, String nmProduto, Integer qtProduto, BigDecimal vlProduto) {
         this.cdProduto = cdProduto;
         this.nmProduto = nmProduto;
         this.qtProduto = qtProduto;
         this.vlProduto = vlProduto;
     }
 
-    public InfoProdutoDashboardDTO criaInstanciaVazia(){
-        return InfoProdutoDashboardDTO.builder()
+    public InfoProdutoDashboard criaInstanciaVazia(){
+        return InfoProdutoDashboard.builder()
                 .cdProduto("")
                 .nmProduto("")
                 .qtProduto(0)

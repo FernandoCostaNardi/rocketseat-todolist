@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -25,7 +26,8 @@ public class ComissoesImpl implements ComissoesQueries {
 	@PersistenceContext
 	private EntityManager manager;
 
-	Timestamp hoje = datasUtil.SysDataDeHoje();
+	LocalDate now = LocalDate.now();
+	Timestamp hoje = Timestamp.valueOf(now.atStartOfDay());
 	
 	//***********************
 	// Total de Vendas do Dia 

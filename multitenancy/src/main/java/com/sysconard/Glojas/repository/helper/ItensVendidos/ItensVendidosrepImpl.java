@@ -3,6 +3,7 @@ package com.sysconard.Glojas.repository.helper.ItensVendidos;
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -29,8 +30,9 @@ public class ItensVendidosrepImpl implements ItensVendidosrepQueries{
 	List<String> operacaoTroca = operacaoUtil.operacaoTroca();
 	List<Long> lojasJab = lojasClientesUtil.lojasJab();
 	List<String> tipoPDVEDanfe = tipoUtil.tipoPDVEDanfe();
-	
-	Timestamp hoje = datasUtil.SysDataDeHoje();
+
+	LocalDate now = LocalDate.now();
+	Timestamp hoje = Timestamp.valueOf(now.atStartOfDay());
 	
 	@Override
 	public List<CompraGeralDTO> buscaComprasGeral() {

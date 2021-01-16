@@ -20,7 +20,7 @@ public class IndexController {
 	public String index(@AuthenticationPrincipal UsuarioSistema usuarioSistema) {
 		System.out.println(usuarioSistema.getUsername());
 		String banco = usuarioSistema.getUsuario().getBanco().toString();
-		return "redirect:/dashboard/" + banco + "/dashboard";
+		return "redirect:/dashboard/" + banco + "/dashboard/welcome";
 	}
 	
 //	@RequestMapping
