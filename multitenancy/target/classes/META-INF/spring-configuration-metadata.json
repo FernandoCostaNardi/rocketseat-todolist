@@ -7,16 +7,16 @@
       "type": "com.sysconard.Glojas.config.MultitenancyProperties"
     },
     {
-      "sourceType": "com.sysconard.Glojas.config.DataSourceConfig",
-      "name": "spring.multitenancy.datasource1",
-      "sourceMethod": "dataSource1()",
-      "type": "javax.sql.DataSource"
-    },
-    {
       "sourceType": "com.sysconard.Glojas.config.MultitenancyProperties",
       "name": "spring.multitenancy.datasource1",
       "sourceMethod": "getDatasource1()",
       "type": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "sourceType": "com.sysconard.Glojas.config.DataSourceConfig",
+      "name": "spring.multitenancy.datasource1",
+      "sourceMethod": "dataSource1()",
+      "type": "javax.sql.DataSource"
     },
     {
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties",
@@ -25,16 +25,16 @@
       "type": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$Xa"
     },
     {
-      "sourceType": "com.sysconard.Glojas.config.DataSourceConfig",
-      "name": "spring.multitenancy.datasource2",
-      "sourceMethod": "dataSource2()",
-      "type": "javax.sql.DataSource"
-    },
-    {
       "sourceType": "com.sysconard.Glojas.config.MultitenancyProperties",
       "name": "spring.multitenancy.datasource2",
       "sourceMethod": "getDatasource2()",
       "type": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "sourceType": "com.sysconard.Glojas.config.DataSourceConfig",
+      "name": "spring.multitenancy.datasource2",
+      "sourceMethod": "dataSource2()",
+      "type": "javax.sql.DataSource"
     },
     {
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties",
@@ -43,16 +43,16 @@
       "type": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$Xa"
     },
     {
-      "sourceType": "com.sysconard.Glojas.config.DataSourceConfig",
-      "name": "spring.multitenancy.datasource3",
-      "sourceMethod": "dataSource3()",
-      "type": "javax.sql.DataSource"
-    },
-    {
       "sourceType": "com.sysconard.Glojas.config.MultitenancyProperties",
       "name": "spring.multitenancy.datasource3",
       "sourceMethod": "getDatasource3()",
       "type": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties"
+    },
+    {
+      "sourceType": "com.sysconard.Glojas.config.DataSourceConfig",
+      "name": "spring.multitenancy.datasource3",
+      "sourceMethod": "dataSource3()",
+      "type": "javax.sql.DataSource"
     },
     {
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties",
