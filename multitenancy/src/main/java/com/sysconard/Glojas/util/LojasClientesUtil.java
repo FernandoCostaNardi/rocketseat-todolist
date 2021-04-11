@@ -17,6 +17,7 @@ public class LojasClientesUtil {
 		lojasJab.add(Long.parseLong("000008"));
 		lojasJab.add(Long.parseLong("000010"));
 		lojasJab.add(Long.parseLong("000009"));
+		lojasJab.add(Long.parseLong("000011"));
 		return lojasJab;
 	}
 }
