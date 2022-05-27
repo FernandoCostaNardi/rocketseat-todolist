@@ -213,9 +213,8 @@ $(document).ready(function(){
 	
 	
 //	*** Estoque Atual ***	
-	var table = $('#tableEstoqueAtual').DataTable();
-	$('#btnExportExcel').on('click', function() {
-		$('<table>').append(table.$('tr').clone()).table2excel({
+	$('#btnExportExcelEstoque').on('click', function() {
+		$('#tableEstoqueAtual').table2excel({
 			exclude: ".noExl",
 			name: "EstoqueAtual",
 			filename: "EstoqueAtual"	
