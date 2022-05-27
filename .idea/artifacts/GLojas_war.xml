@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="GLojas:war">
+    <output-path>$PROJECT_DIR$/multitenancy/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>GLojas</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="Glojas.war">
+      <element id="artifact" artifact-name="GLojas:war exploded" />
+    </root>
+  </artifact>
+</component>
