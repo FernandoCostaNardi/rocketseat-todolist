@@ -17,6 +17,7 @@ public class OperacaoUtil {
 		operacaoVenda.add("000999");
 		operacaoVenda.add("000007");
 		operacaoVenda.add("000001");
+		operacaoVenda.add("000054");
 		return operacaoVenda;
 	}
 
