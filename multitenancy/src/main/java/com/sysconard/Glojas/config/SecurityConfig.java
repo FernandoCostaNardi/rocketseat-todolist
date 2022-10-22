@@ -54,6 +54,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			    	.antMatchers("/funcionarios/**").hasAnyAuthority("PESQUISA_ADM_GERAL")
 			    	.antMatchers("/produtos/**").hasAnyAuthority("PESQUISA_PRODUTOS_GERAL")
 			    	.antMatchers("/estoque/**").hasAnyAuthority("PESQUISA_ESTOQUE_GERAL")
+			    	.antMatchers("/estoque/oex/**").hasAnyAuthority("PESQUISA_ESTOQUE_GERAL_OEX")
 			     	.antMatchers("/compras/**").hasAnyAuthority("PESQUISA_COMPRA_GERAL")
   				    .antMatchers("/vendas/**").hasAnyAuthority("PESQUISA_VENDAS_GERAL")
   				    .antMatchers("/comissao/**").hasAnyAuthority("PESQUISA_COMISSAO_GERAL")
