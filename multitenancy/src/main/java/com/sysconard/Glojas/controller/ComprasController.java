@@ -33,4 +33,15 @@ public class ComprasController {
 		mv.addObject("tenant", tenantid);
 		return mv;
 	}
+
+	@GetMapping("/oex")
+	public ModelAndView pesquisarOex(@PathVariable String tenantid) {
+
+		List<CompraGeralDTO> todaVendaOex = itensVendidosrep.buscaComprasGeralOex();
+
+		ModelAndView mv = new ModelAndView("compra/PesquisaCompraGeralOex_" + tenantid);
+		mv.addObject("vendasGeral", todaVendaOex);
+		mv.addObject("tenant", tenantid);
+		return mv;
+	}
 }

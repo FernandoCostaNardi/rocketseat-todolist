@@ -111,12 +111,15 @@
                     </a>
                            <ul class="aw-menu__list  aw-menu__list--sublist">   
                                          
-                                        <li class="aw-menu__item  aw-menu__item--link" gestaoloja:menu="@{/compras/{tenantid}/compras(tenantid=${tenantid})}" >
-                                                    <a th:href="@{/compras/{tenantid}/compras(tenantid=${tenantid})}"><label class="gl-lateral-menuSecundario">Analise Compras</label></a>
-                                        </li>                                                
-                                        <li class="aw-menu__item  aw-menu__item--link" gestaoloja:menu="@{/compras/{tenantid}/analiseDeCompras(tenantid=${tenantid})}" >
-                                                    <a th:href="@{/compras/{tenantid}/analiseDeCompras(tenantid=${tenantid})}"><label class="gl-lateral-menuSecundario">Analise Detalhada </label></a>
-                                        </li>                                                                                      
+                                <li class="aw-menu__item  aw-menu__item--link" gestaoloja:menu="@{/compras/{tenantid}/compras(tenantid=${tenantid})}" sec:authorize="!hasAuthority('PESQUISA_ESTOQUE_GERAL_OEX')">
+                                    <a th:href="@{/compras/{tenantid}/compras(tenantid=${tenantid})}"><label class="gl-lateral-menuSecundario">Analise Compras</label></a>
+                                </li>
+                                <li class="aw-menu__item  aw-menu__item--link" gestaoloja:menu="@{/compras/{tenantid}/compras/oex(tenantid=${tenantid})}" sec:authorize="hasAuthority('PESQUISA_ESTOQUE_GERAL_OEX')">
+                                    <a th:href="@{/compras/{tenantid}/compras/oex(tenantid=${tenantid})}"><label class="gl-lateral-menuSecundario">Analise Compras</label></a>
+                                </li>
+                                <li class="aw-menu__item  aw-menu__item--link" gestaoloja:menu="@{/compras/{tenantid}/analiseDeCompras(tenantid=${tenantid})}" sec:authorize="!hasAuthority('PESQUISA_ESTOQUE_GERAL_OEX')">
+                                    <a th:href="@{/compras/{tenantid}/analiseDeCompras(tenantid=${tenantid})}"><label class="gl-lateral-menuSecundario">Analise Detalhada </label></a>
+                                </li>
                            </ul>                
                 </li>   
     <!--********** Final do Menu Consultas Compras ********** -->                         

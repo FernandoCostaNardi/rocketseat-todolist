@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm" version="1.0">
+
+    <named-native-query name="infoVendedores.recuperarVendedorValor" result-set-mapping="infoVendedorMapping">
+        <query>
+              SELECT d.FUNCOD cdFuncionario
+                   , f.FUNDES nmFuncionario
+                   , SUM(d.DOCVLRTOT) vlTotal
+                FROM FUNCIONARIO f,
+                     DOCUMENTO d
+               WHERE d.FUNCOD = f.FUNCOD
+                 AND d.DOCSTA = 'E'
+                 AND d.ORICOD IN (:tipo)
+                 AND d.OPECOD IN (:operacao)
+                 AND d.DOCDATEMI BETWEEN :dataInicial AND :dataFinal
+            GROUP BY d.FUNCOD, f.FUNDES
+            ORDER BY vlTotal DESC
+
+        </query>
+    </named-native-query>
+
+    <named-native-query name="infoVendedores.recuperarVendedorQuantidade" result-set-mapping="infoVendedorQuantidadeMapping">
+        <query>
+              SELECT d.FUNCOD cdFuncionario
+                     , f.FUNDES nmFuncionario
+                     , SUM(s.ITSQTDTOT) qtProduto
+                     , AVG(s.ITSVLRLIQ) vlMedia
+                FROM ITEM_SAIDA s,
+                     FUNCIONARIO f,
+                     DOCUMENTO d
+               WHERE d.FUNCOD = f.FUNCOD
+                 AND s.FUNCOD = d.FUNCOD
+                 AND s.SAICOD = d.DOCCOD
+                 AND d.DOCSTA = 'E'
+                 AND d.ORICOD IN (:tipo)
+                 AND d.OPECOD IN (:operacao)
+                 AND d.DOCDATEMI BETWEEN :dataInicial AND :dataFinal
+            GROUP BY d.FUNCOD, f.FUNDES
+            ORDER BY qtProduto DESC
+        </query>
+    </named-native-query>
+
+    <named-native-query name="infoVendedores.recuperarVendedorTroca" result-set-mapping="infoVendedorMapping">
+        <query>
+               SELECT d.FUNCOD cdFuncionario
+                      , f.FUNDES nmFuncionario
+                      , SUM(d.DOCVLRTOT) vlTotal
+                 FROM FUNCIONARIO f,
+                      DOCUMENTO d
+               WHERE d.FUNCOD = f.FUNCOD
+                 AND d.DOCSTA = 'E'
+                 AND d.DOCSTANFE = 'A'
+                 AND d.ORICOD IN (:tipo)
+                 AND d.OPECOD IN (:operacao)
+                 AND d.DOCDATEMI BETWEEN :dataInicial AND :dataFinal
+            GROUP BY d.FUNCOD, f.FUNDES
+            ORDER BY vlTotal DESC
+        </query>
+    </named-native-query>
+
+    <sql-result-set-mapping name="infoVendedorMapping">
+    <constructor-result target-class="com.sysconard.Glojas.DTO.dashboard.InfoVendedoresDashboardDTO">
+        <column name="cdFuncionario" class="java.lang.String"/>
+        <column name="nmFuncionario" class="java.lang.String"/>
+        <column name="vlTotal" class="java.math.BigDecimal"/>
+    </constructor-result>
+    </sql-result-set-mapping>
+
+    <sql-result-set-mapping name="infoVendedorQuantidadeMapping">
+        <constructor-result target-class="com.sysconard.Glojas.DTO.dashboard.InfoVendedoresDashboardDTO">
+            <column name="cdFuncionario" class="java.lang.String"/>
+            <column name="nmFuncionario" class="java.lang.String"/>
+            <column name="qtProduto" class="java.lang.Integer"/>
+            <column name="vlMedia" class="java.math.BigDecimal"/>
+        </constructor-result>
+</sql-result-set-mapping>
+
+</entity-mappings>
