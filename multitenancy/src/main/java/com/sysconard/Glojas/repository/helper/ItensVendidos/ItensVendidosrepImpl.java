@@ -379,6 +379,11 @@ public class ItensVendidosrepImpl implements ItensVendidosrepQueries{
 				+ ", r.refplu "
 				+ ", p.descricao"
 
+				+ ", (select c.custoReposicao "
+				+ "	 from Custo c "
+				+ " where c.loja.codigo = 4 "
+				+ " and c.refplu = r.refplu) as custo "
+
 				+ ", (select pr.precoVenda "
 				+ " from Preco pr "
 				+ " where pr.loja.codigo = 4 "
