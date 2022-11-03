@@ -10,4 +10,6 @@ public interface ItensVendidosrepQueries {
 
 
 	List<CompraGeralDTO> buscaComprasGeralOex();
+
+	List<CompraGeralDTO> buscaComprasGeralWCost();
 }

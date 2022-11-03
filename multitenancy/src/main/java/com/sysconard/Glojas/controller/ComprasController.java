@@ -44,4 +44,15 @@ public class ComprasController {
 		mv.addObject("tenant", tenantid);
 		return mv;
 	}
+
+	@GetMapping("/wcost")
+	public ModelAndView pesquisarWCost(@PathVariable String tenantid) {
+
+		List<CompraGeralDTO> todaVendaWCost = itensVendidosrep.buscaComprasGeralWCost();
+
+		ModelAndView mv = new ModelAndView("compra/PesquisaCompraGeralWCost_" + tenantid);
+		mv.addObject("vendasGeral", todaVendaWCost);
+		mv.addObject("tenant", tenantid);
+		return mv;
+	}
 }
