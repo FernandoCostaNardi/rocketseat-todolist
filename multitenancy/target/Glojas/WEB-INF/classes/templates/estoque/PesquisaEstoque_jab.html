@@ -47,6 +47,8 @@
                                      <th class="gl-tabela-estoque-estViaSul">Pátio água fria</th>
                                      <th class="gl-tabela-estoque-estViaSul">ViaSul</th>
                                     <th class="gl-tabela-estoque-estViaSul">Parangaba</th>
+                                    <th class="gl-tabela-estoque-estViaSul">Kennedy</th>
+                                    <th class="gl-tabela-estoque-estViaSul">RioMar</th>
                                     <th class="gl-tabela-estoque-estViaSul">Estoque Total</th>
                                 </tr>
                             </thead>
@@ -66,7 +68,9 @@
                                          <td class="gl-tabela-estoque-estViaSul" th:text="${@uIUtil.converterParaInteger(estoque.loj10)}">Visa</td>
                                          <td class="gl-tabela-estoque-estViaSul" th:text="${@uIUtil.converterParaInteger(estoque.loj8)}">Visa</td>
                                      <td class="gl-tabela-estoque-estViaSul" th:text="${@uIUtil.converterParaInteger(estoque.loj11)}">Visa</td>
-                                    <td class="gl-tabela-estoque-estViaSul" th:text="${@uIUtil.converterParaInteger(estoque.loj1 
+                                     <td class="gl-tabela-estoque-estViaSul" th:text="${@uIUtil.converterParaInteger(estoque.loj12)}">Visa</td>
+                                     <td class="gl-tabela-estoque-estViaSul" th:text="${@uIUtil.converterParaInteger(estoque.loj13)}">Visa</td>
+                                    <td class="gl-tabela-estoque-estViaSul" th:text="${@uIUtil.converterParaInteger(estoque.loj1
                                                                                                                                                                   + estoque.loj2 
 												                                                                                                                  + estoque.loj3 
 												                                                                                                                  + estoque.loj4
@@ -76,7 +80,8 @@
 												                                                                                                                  + estoque.loj9 
 												                                                                                                                  + estoque.loj10
 												                                                                                                                  + estoque.loj8
-												                                                                                                                  + estoque.loj11)}">Visa</td>
+												                                                                                                                  + estoque.loj11
+												                                                                                                                  + estoque.loj12)}">Visa</td>
                                  </tr>
                                  <tr th:if=${#lists.isEmpty(estoques)}>
                                     <td colspan="7">Nenhum produto em estoque foi encontrado</td>
