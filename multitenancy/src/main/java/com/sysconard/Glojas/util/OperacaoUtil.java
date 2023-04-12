@@ -17,7 +17,16 @@ public class OperacaoUtil {
 		operacaoVenda.add("000999");
 		operacaoVenda.add("000007");
 		operacaoVenda.add("000001");
+		operacaoVenda.add("000045");
 		operacaoVenda.add("000054");
+		operacaoVenda.add("000062");
+		operacaoVenda.add("000063");
+		operacaoVenda.add("000064");
+		operacaoVenda.add("000065");
+		operacaoVenda.add("000067");
+		operacaoVenda.add("000068");
+		operacaoVenda.add("000069");
+		operacaoVenda.add("000071");
 		return operacaoVenda;
 	}
 
