@@ -33,4 +33,26 @@ public class ComprasController {
 		mv.addObject("tenant", tenantid);
 		return mv;
 	}
+
+	@GetMapping("/oex")
+	public ModelAndView pesquisarOex(@PathVariable String tenantid) {
+
+		List<CompraGeralDTO> todaVendaOex = itensVendidosrep.buscaComprasGeralOex();
+
+		ModelAndView mv = new ModelAndView("compra/PesquisaCompraGeralOex_" + tenantid);
+		mv.addObject("vendasGeral", todaVendaOex);
+		mv.addObject("tenant", tenantid);
+		return mv;
+	}
+
+	@GetMapping("/wcost")
+	public ModelAndView pesquisarWCost(@PathVariable String tenantid) {
+
+		List<CompraGeralDTO> todaVendaWCost = itensVendidosrep.buscaComprasGeralWCost();
+
+		ModelAndView mv = new ModelAndView("compra/PesquisaCompraGeralWCost_" + tenantid);
+		mv.addObject("vendasGeral", todaVendaWCost);
+		mv.addObject("tenant", tenantid);
+		return mv;
+	}
 }

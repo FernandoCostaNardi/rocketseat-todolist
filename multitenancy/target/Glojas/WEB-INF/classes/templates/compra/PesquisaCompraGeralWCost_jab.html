@@ -44,7 +44,6 @@
                            <th class="gl-tabela-comprasGeral-marcasTitulo">Marcas</th>
                            <th class="gl-tabela-comprasGeral-refpluTitulo">Refplu</th>
                            <th >Descrição</th>
-                           <th class="gl-tabela-comprasGeral-custoTitulo" sec:authorize="hasAuthority('PESQUISA_PRODUTOS_GERAL')">Custo Reposição</th>
                            <th class="gl-tabela-comprasGeral-precoVendaTitulo">Preço Venda</th>
                            <th class="gl-tabela-comprasGeral-vendasTitulo">Vendas 90 dias</th>
                            <th class="gl-tabela-comprasGeral-vendasTitulo">Vendas 60 dias</th>
@@ -70,10 +69,7 @@
                            			th:text="${vendas.refplu}">Visa
                            </td>
                            <td  	th:text="${vendas.descricaoProduto}">Visa</td>
-                           <td 	class="gl-tabela-comprasGeral-custoDados" sec:authorize="hasAuthority('PESQUISA_PRODUTOS_GERAL')"
-                           			th:text="${vendas.precoCusto != null} ?  ${{'R$ ' + vendas.precoCusto}} : 'R$0,00'">Visa
-                           </td>
-                           <td 	class="gl-tabela-comprasGeral-precoVendaDados" 
+                           <td 	class="gl-tabela-comprasGeral-precoVendaDados"
                            			th:text="${vendas.precoVenda != null} ?  ${{'R$ ' + vendas.precoVenda}} : 'R$0,00'">Visa
                            </td>
                            <td 	class="gl-tabela-comprasGeral-vendasDados" 

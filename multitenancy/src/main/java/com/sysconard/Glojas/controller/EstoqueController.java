@@ -31,4 +31,15 @@ public class EstoqueController {
 		return mv;
 	}
 
+	@GetMapping("/oex")
+	public ModelAndView pesquisa_oex(@PathVariable String tenantid) {
+
+		List<EstoqueDTO> todoEstoqueOex = estoques.buscaEstoqueOex();
+
+		ModelAndView mv = new ModelAndView("estoque/PesquisaEstoqueOex_" + tenantid);
+		mv.addObject("estoques", todoEstoqueOex);
+		mv.addObject("tenant", tenantid);
+		return mv;
+	}
+
 }

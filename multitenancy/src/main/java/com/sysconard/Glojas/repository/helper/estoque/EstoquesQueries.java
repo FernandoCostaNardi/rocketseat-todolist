@@ -10,7 +10,8 @@ public interface EstoquesQueries {
 	public List<Object[]> buscaEstoqueDasLojas();
 
 	public List<EstoqueDTO> buscaEstoque();
-	
+	public List<EstoqueDTO> buscaEstoqueOex();
+
 	public BigDecimal estoqueDoProdutoPelaRefplu(String refplu);
 
 }

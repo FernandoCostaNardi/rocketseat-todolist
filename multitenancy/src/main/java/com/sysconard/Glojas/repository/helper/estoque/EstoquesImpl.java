@@ -81,6 +81,12 @@ public class EstoquesImpl implements EstoquesQueries {
 	}
 
 	@Override
+	public List<EstoqueDTO> buscaEstoqueOex() {
+		List<EstoqueDTO> listaEstoqueOex = manager.createNamedQuery("buscaEstoqueOex").getResultList();
+		return listaEstoqueOex;
+	}
+
+	@Override
 	public BigDecimal estoqueDoProdutoPelaRefplu(String refplu) {
 		Optional<BigDecimal> optional = Optional
 				.ofNullable(manager

@@ -7,6 +7,9 @@ import com.sysconard.Glojas.DTO.CompraGeralDTO;
 public interface ItensVendidosrepQueries {
 
 	List<CompraGeralDTO> buscaComprasGeral();
-	
-	
+
+
+	List<CompraGeralDTO> buscaComprasGeralOex();
+
+	List<CompraGeralDTO> buscaComprasGeralWCost();
 }

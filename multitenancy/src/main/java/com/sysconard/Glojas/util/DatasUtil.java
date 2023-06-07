@@ -23,20 +23,29 @@ public class DatasUtil {
 	
 	public String primeiroDiaDoMesString() {
 
-		LocalDateTime data = LocalDateTime.now();
-		LocalDateTime primeiroDiaDoMesData = data.with(TemporalAdjusters.firstDayOfMonth());
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-		String primeiroDiaDoMes = primeiroDiaDoMesData.format(formatter);
-		return primeiroDiaDoMes;
+		// Obter o primeiro dia do mês passado
+		LocalDateTime now = LocalDateTime.now();
+		LocalDateTime firstDayOfLastMonth = now.with(TemporalAdjusters.firstDayOfMonth());
+
+		// Definir o primeiro segundo do dia
+		LocalDateTime firstSecondOfDay = firstDayOfLastMonth.withHour(0).withMinute(0).withSecond(0);
+
+		// Formatar a data e hora
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+		return firstSecondOfDay.format(formatter);
 	}
 
 	public String UltimoDiaDoMesString() {
 
-		LocalDateTime data = LocalDateTime.now();
-		LocalDateTime ultimoDiaDoMesData = data.with(TemporalAdjusters.lastDayOfMonth());
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-		String ultimoDiaDoMes = ultimoDiaDoMesData.format(formatter);
-		return ultimoDiaDoMes;
+		LocalDateTime now = LocalDateTime.now();
+		LocalDateTime lastDayOfTwoMonthsAgo = now.with(TemporalAdjusters.lastDayOfMonth());
+
+		// Definir o último segundo do dia
+		LocalDateTime lastSecondOfDay = lastDayOfTwoMonthsAgo.withHour(23).withMinute(59).withSecond(59);
+
+		// Formatar a data e hora
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+		return lastSecondOfDay.format(formatter);
 	}
 	
 	public String primeiroDiaDoAnoString() {
@@ -59,56 +68,86 @@ public class DatasUtil {
 	
 	public String primeiroDiaDoMes_90diasString() {
 
-		LocalDateTime data = LocalDateTime.now();
-		LocalDateTime noventaDiasAtrasData = data.with(TemporalAdjusters.firstDayOfMonth()).minusMonths(3);
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-		String noventaDiasAtras = noventaDiasAtrasData.format(formatter);
-		return noventaDiasAtras;
+		// Obter o primeiro dia do mês passado
+		LocalDateTime now = LocalDateTime.now();
+		LocalDateTime firstDayOfLastMonth = now.minusMonths(3).with(TemporalAdjusters.firstDayOfMonth());
+
+		// Definir o primeiro segundo do dia
+		LocalDateTime firstSecondOfDay = firstDayOfLastMonth.withHour(0).withMinute(0).withSecond(0);
+
+		// Formatar a data e hora
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+		return firstSecondOfDay.format(formatter);
 	}
 	
 	public String UltimoDiaDoMes_90diasString() {
 
-		LocalDateTime data = LocalDateTime.now();
-		LocalDateTime noventaDiasAtrasData = data.with(TemporalAdjusters.lastDayOfMonth()).minusMonths(3);
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-		String noventaDiasAtras = noventaDiasAtrasData.format(formatter);
-		return noventaDiasAtras;
+		LocalDateTime now = LocalDateTime.now();
+		LocalDateTime lastDayOfTwoMonthsAgo = now.minusMonths(3)
+				.with(TemporalAdjusters.lastDayOfMonth());
+
+		// Definir o último segundo do dia
+		LocalDateTime lastSecondOfDay = lastDayOfTwoMonthsAgo.withHour(23).withMinute(59).withSecond(59);
+
+		// Formatar a data e hora
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+		return lastSecondOfDay.format(formatter);
 	}
 	
 	public String primeiroDiaDoMes_60diasString() {
 
-		LocalDateTime data = LocalDateTime.now();
-		LocalDateTime sessentaDiasAtrasData = data.with(TemporalAdjusters.firstDayOfMonth()).minusMonths(2);
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-		String sessentaDiasAtras = sessentaDiasAtrasData.format(formatter);
-		return sessentaDiasAtras;
+		// Obter o primeiro dia do mês passado
+		LocalDateTime now = LocalDateTime.now();
+		LocalDateTime firstDayOfLastMonth = now.minusMonths(2).with(TemporalAdjusters.firstDayOfMonth());
+
+		// Definir o primeiro segundo do dia
+		LocalDateTime firstSecondOfDay = firstDayOfLastMonth.withHour(0).withMinute(0).withSecond(0);
+
+		// Formatar a data e hora
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+		return firstSecondOfDay.format(formatter);
 	}
 	
 	public String UltimoDiaDoMes_60diasString() {
 
-		LocalDateTime data = LocalDateTime.now();
-		LocalDateTime sessentaDiasAtrasData = data.with(TemporalAdjusters.lastDayOfMonth()).minusMonths(2);
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-		String sessentaDiasAtras = sessentaDiasAtrasData.format(formatter);
-		return sessentaDiasAtras;
+		LocalDateTime now = LocalDateTime.now();
+		LocalDateTime lastDayOfTwoMonthsAgo = now.minusMonths(2)
+				.with(TemporalAdjusters.lastDayOfMonth());
+
+		// Definir o último segundo do dia
+		LocalDateTime lastSecondOfDay = lastDayOfTwoMonthsAgo.withHour(23).withMinute(59).withSecond(59);
+
+		// Formatar a data e hora
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+		return lastSecondOfDay.format(formatter);
+
 	}
 	
 	public String primeiroDiaDoMes_30diasString() {
 
-		LocalDateTime data = LocalDateTime.now();
-		LocalDateTime trintaDiasAtrasData = data.with(TemporalAdjusters.firstDayOfMonth()).minusMonths(1);
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-		String trintaDiasAtras = trintaDiasAtrasData.format(formatter);
-		return trintaDiasAtras;
+		// Obter o primeiro dia do mês passado
+		LocalDateTime now = LocalDateTime.now();
+		LocalDateTime firstDayOfLastMonth = now.minusMonths(1).with(TemporalAdjusters.firstDayOfMonth());
+
+		// Definir o primeiro segundo do dia
+		LocalDateTime firstSecondOfDay = firstDayOfLastMonth.withHour(0).withMinute(0).withSecond(0);
+
+		// Formatar a data e hora
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+		return firstSecondOfDay.format(formatter);
 	}
 	
 	public String UltimoDiaDoMes_30diasString() {
+		// Obter o último dia do mês passado
+		LocalDateTime now = LocalDateTime.now();
+		LocalDateTime lastDayOfMonth = now.minusMonths(1).with(TemporalAdjusters.lastDayOfMonth());
 
-		LocalDateTime data = LocalDateTime.now();
-		LocalDateTime trintaDiasAtrasData = data.with(TemporalAdjusters.lastDayOfMonth()).minusMonths(1);
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-		String trintaDiasAtras = trintaDiasAtrasData.format(formatter);
-		return trintaDiasAtras;
+		// Definir o último segundo do dia
+		LocalDateTime lastSecondOfDay = lastDayOfMonth.withHour(23).withMinute(59).withSecond(59);
+
+		// Formatar a data e hora
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+		return lastSecondOfDay.format(formatter);
 	}
 
 	public Timestamp conversordeTimeStamp(String data) throws ParseException {
