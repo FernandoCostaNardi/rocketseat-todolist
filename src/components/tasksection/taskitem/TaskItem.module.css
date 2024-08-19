@@ -1,0 +1,99 @@
+.taskItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start; 
+   
+    height: 4.5rem;
+    width: 100%;
+
+    padding: 1rem;
+   
+      
+    border: 1px solid var(--gray-400);
+    border-radius: 12px;
+
+    background-color: var(--gray-500);
+}
+
+.taskItem div {
+    display: flex;
+    
+}
+
+.taskItem label {
+    display: flex;
+    padding: 3px;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.taskItem div label input[type='checkbox'] {
+    display: none;
+    align-items: flex-start; 
+}
+  
+
+.taskItemCheckbox {
+  border-radius: 100%;
+  height: 1.125rem;
+  width: 1.125rem;
+
+  transition: 0.2s all;
+
+  display: flex;
+  align-items: flex-start; 
+  justify-content: center;
+}
+
+
+.taskItemChecked{
+  color: var(--gray-100);
+  border: 2px solid var(--purple-dark);
+  background-color: var(--purple-dark);
+}
+
+.taskItemChecked:hover {
+    border: 2px solid var(--purple);
+    background-color: var(--purple);
+  }
+  
+.taskItemNotChecked {
+    border: 2px solid var(--blue);
+}
+
+.taskItemNotChecked:hover {
+    background-color: rgba(30, 111, 159, 0.2);
+  }
+
+  .paragraph {
+    font-size: 0.875rem;
+    line-height: 140%;
+    user-select: none;
+    color: var(--gray-100);
+    transition: 0.2s all;
+  }
+
+  .paragraph-checked {
+  text-decoration: line-through;
+  color: var(--gray-300);
+}
+
+
+.taskItem button {
+    background-color: transparent;
+    color: var(--gray-300);
+    border: none;
+    border-radius: 4px;
+    padding: 5px 4px 2px 4px;
+    transition: 0.2s background-color;
+    cursor: pointer;
+}
+
+.taskItem button :hover {
+    background-color: var(--gray-400);
+}
+
+.taskItem button:hover line, .taskItem button:hover path {
+    fill: var(--danger);
+  }

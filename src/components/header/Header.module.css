@@ -1,0 +1,9 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: calc(0px - 1.5rem - 4px);
+    margin-bottom: 4rem;
+}

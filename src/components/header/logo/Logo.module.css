@@ -1,27 +1,28 @@
+/* Header Section */
 .header {
     display: flex;
     align-items: center;
     justify-content: center;
-    height:  12.5rem;
-    background: var(--gray-700);   
+    height: 12.5rem;
+    background: var(--gray-700);
 }
 
 .header img {
     width: 1.375rem;
-    height:  2.25rem; 
+    height: 2.25rem;
     margin-right: 0.75rem;
 }
 
 .header p {
-   font-size: 2.5rem;
-   font-weight: 900;
-   line-height: 1.6;
+    font-size: 2.5rem;
+    font-weight: 900;
+    line-height: 1.6;
 }
 
 .header p span:first-of-type {
-    color: var(--blue);  
+    color: var(--blue);
 }
 
 .header p span:last-of-type {
-   color: var(--purple-dark); 
+    color: var(--purple-dark);
 }

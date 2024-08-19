@@ -1,0 +1,17 @@
+.taskSection { 
+    max-width: 46rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+
+.tasksList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+   
+
+    margin-bottom: 0.75rem;
+  }

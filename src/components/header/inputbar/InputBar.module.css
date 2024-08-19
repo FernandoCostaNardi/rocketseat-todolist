@@ -1,0 +1,10 @@
+.inputBar input {
+    width: 39.875rem;   
+    height: 3.375rem;
+    background: var(--gray-500);
+    border: 0,5rem solid var(--gray-700);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-right: 0.75rem;
+    color: var(--gray-100)
+}

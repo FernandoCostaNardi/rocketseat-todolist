@@ -1,0 +1,22 @@
+.emptyState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    color: var(--gray-300);
+
+    border-radius: 8px;
+    border-top: 1px solid var(--gray-400);
+    
+    padding: 4rem 1rem;
+}
+
+.emptyState img {
+    margin-bottom: 1rem;
+}
+
+.emptyState p {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.4;
+}

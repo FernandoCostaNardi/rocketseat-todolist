@@ -1,0 +1,40 @@
+.taskCounter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+ 
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.taskCounter div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: bold;
+}
+
+.taskCounter div p {
+    font-size: 0.875rem;
+    font-weight: bold;
+}
+
+.taskCounter div:first-child p {
+    color: var(--blue);
+}
+
+.taskCounter div:last-child p {
+    color: var(--purple);
+}
+
+.taskCounter div span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px 8px;
+    border-radius: 16px;
+    background: var(--gray-400);
+    color: var(--gray-200);
+    font-size: 0.75rem;
+}

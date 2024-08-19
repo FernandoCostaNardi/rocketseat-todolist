@@ -1,24 +1,4 @@
-.newTask {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-items: center;
-
-    margin-top: calc(0px - 1.5rem - 4px);
-}
-
-.newTask input {
-    width: 39.875rem;   
-    height: 3.375rem;
-    background: var(--gray-500);
-    border: 0,5rem solid var(--gray-700);
-    border-radius: 8px;
-    padding: 1rem;
-    margin-right: 0.75rem;
-    color: var(--gray-100)
-}
-
-.newTask button {
+.createButton button {
     display: flex; 
     align-items: center; 
     justify-content: center; 
@@ -38,11 +18,11 @@
     transition: background-color 0.1s;
 }
 
-.newTask button:hover {
+.createButton button:hover {
     background: var(--blue);
 }
 
-.newTask button span {
+.createButton button span {
     display: flex; /* Define o span como um contêiner flexível */
     align-items: center; /* Centraliza o ícone verticalmente */
     margin-left: 8px;
