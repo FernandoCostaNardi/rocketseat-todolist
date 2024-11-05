@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Created-By: IntelliJ IDEA
-Built-By: fc-na
+Built-By: Fernando
 Build-Jdk: 1.8.0_211
 Implementation-Title: GLojas
 Implementation-Version: 1.0.0-SNAPSHOT
