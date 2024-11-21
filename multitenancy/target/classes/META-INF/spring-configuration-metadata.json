@@ -158,16 +158,6 @@
       "type": "java.lang.String"
     },
     {
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$Xa",
-      "name": "spring.multitenancy.datasource1.xa.data-source-class-name",
-      "type": "java.lang.String"
-    },
-    {
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$Xa",
-      "name": "spring.multitenancy.datasource1.xa.properties",
-      "type": "java.util.Map<java.lang.String,java.lang.String>"
-    },
-    {
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties",
       "name": "spring.multitenancy.datasource2.continue-on-error",
       "type": "java.lang.Boolean"
@@ -263,16 +253,6 @@
       "type": "java.lang.String"
     },
     {
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$Xa",
-      "name": "spring.multitenancy.datasource2.xa.data-source-class-name",
-      "type": "java.lang.String"
-    },
-    {
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$Xa",
-      "name": "spring.multitenancy.datasource2.xa.properties",
-      "type": "java.util.Map<java.lang.String,java.lang.String>"
-    },
-    {
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties",
       "name": "spring.multitenancy.datasource3.continue-on-error",
       "type": "java.lang.Boolean"
@@ -366,16 +346,6 @@
       "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties",
       "name": "spring.multitenancy.datasource3.username",
       "type": "java.lang.String"
-    },
-    {
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$Xa",
-      "name": "spring.multitenancy.datasource3.xa.data-source-class-name",
-      "type": "java.lang.String"
-    },
-    {
-      "sourceType": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$Xa",
-      "name": "spring.multitenancy.datasource3.xa.properties",
-      "type": "java.util.Map<java.lang.String,java.lang.String>"
     }
   ]
 }

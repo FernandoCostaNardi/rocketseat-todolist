@@ -19,7 +19,8 @@ import com.sysconard.Glojas.DTO.EstoqueDTO;
 		+ "(select estoque10_.esttot from estoque estoque10_ inner join referencia referencia11_ on estoque10_.refplu=referencia11_.refplu where estoque10_.lojcod=8 and estoque10_.loccod=1 and referencia11_.refplu=referencia1_.refplu) as loj8, "
 		+ "(select estoque13_.esttot from estoque estoque13_ inner join referencia referencia14_ on estoque13_.refplu=referencia14_.refplu where estoque13_.lojcod=11 and estoque13_.loccod=1 and referencia14_.refplu=referencia1_.refplu) as loj11, "
 		+ "(select estoque14_.esttot from estoque estoque14_ inner join referencia referencia15_ on estoque14_.refplu=referencia15_.refplu where estoque14_.lojcod=12 and estoque14_.loccod=1 and referencia15_.refplu=referencia1_.refplu) as loj12, "
-		+ "(select estoque15_.esttot from estoque estoque15_ inner join referencia referencia16_ on estoque15_.refplu=referencia16_.refplu where estoque15_.lojcod=13 and estoque15_.loccod=1 and referencia16_.refplu=referencia1_.refplu) as loj13 "
+		+ "(select estoque15_.esttot from estoque estoque15_ inner join referencia referencia16_ on estoque15_.refplu=referencia16_.refplu where estoque15_.lojcod=13 and estoque15_.loccod=1 and referencia16_.refplu=referencia1_.refplu) as loj13, "
+		+ "(select estoque16_.esttot from estoque estoque16_ inner join referencia referencia17_ on estoque16_.refplu=referencia17_.refplu where estoque16_.lojcod=14 and estoque16_.loccod=1 and referencia17_.refplu=referencia1_.refplu) as loj14 "
 		+ "from estoque estoque0_ inner join referencia referencia1_ on estoque0_.refplu=referencia1_.refplu inner join produto produto2_ on referencia1_.procod=produto2_.procod, marca marca3_ where produto2_.marcod=marca3_.marcod and estoque0_.lojcod=1 and estoque0_.loccod=1", resultSetMapping = "buscaEstoqueMapping"),
 		@NamedNativeQuery(name = "buscaEstoqueOex", query = "select referencia1_.refplu as refplu, marca3_.mardes as marca, produto2_.prodes as descricao, estoque0_.esttot as loj1, "
 				+ "(select estoque3_.esttot from estoque estoque3_ inner join referencia referencia4_ on estoque3_.refplu=referencia4_.refplu where estoque3_.lojcod=2 and estoque3_.loccod=1 and referencia4_.refplu=referencia1_.refplu) as loj2, "
@@ -33,7 +34,8 @@ import com.sysconard.Glojas.DTO.EstoqueDTO;
 				+ "(select estoque10_.esttot from estoque estoque10_ inner join referencia referencia11_ on estoque10_.refplu=referencia11_.refplu where estoque10_.lojcod=8 and estoque10_.loccod=1 and referencia11_.refplu=referencia1_.refplu) as loj8, "
 				+ "(select estoque13_.esttot from estoque estoque13_ inner join referencia referencia14_ on estoque13_.refplu=referencia14_.refplu where estoque13_.lojcod=11 and estoque13_.loccod=1 and referencia14_.refplu=referencia1_.refplu) as loj11, "
 				+ "(select estoque14_.esttot from estoque estoque14_ inner join referencia referencia15_ on estoque14_.refplu=referencia15_.refplu where estoque14_.lojcod=12 and estoque14_.loccod=1 and referencia15_.refplu=referencia1_.refplu) as loj12, "
-				+ "(select estoque15_.esttot from estoque estoque15_ inner join referencia referencia16_ on estoque15_.refplu=referencia16_.refplu where estoque15_.lojcod=13 and estoque15_.loccod=1 and referencia16_.refplu=referencia1_.refplu) as loj13 "
+				+ "(select estoque15_.esttot from estoque estoque15_ inner join referencia referencia16_ on estoque15_.refplu=referencia16_.refplu where estoque15_.lojcod=13 and estoque15_.loccod=1 and referencia16_.refplu=referencia1_.refplu) as loj13, "
+				+ "(select estoque16_.esttot from estoque estoque16_ inner join referencia referencia17_ on estoque16_.refplu=referencia17_.refplu where estoque16_.lojcod=14 and estoque16_.loccod=1 and referencia17_.refplu=referencia1_.refplu) as loj14 "
 				+ "from estoque estoque0_ inner join referencia referencia1_ on estoque0_.refplu=referencia1_.refplu inner join produto produto2_ on referencia1_.procod=produto2_.procod, marca marca3_ where produto2_.marcod=marca3_.marcod and estoque0_.lojcod=1 and estoque0_.loccod=1 and marca3_.MARDES in ('OEX', 'CELLUTION')", resultSetMapping = "buscaEstoqueMappingOex")})
 @SqlResultSetMappings({@SqlResultSetMapping(name = "buscaEstoqueMapping", classes = {
 		@ConstructorResult(targetClass = com.sysconard.Glojas.DTO.EstoqueDTO.class, columns = {
@@ -42,7 +44,7 @@ import com.sysconard.Glojas.DTO.EstoqueDTO;
 				@ColumnResult(name = "loj4"), @ColumnResult(name = "loj5"),
 				@ColumnResult(name = "loj6"), @ColumnResult(name = "loj7"), @ColumnResult(name = "loj8"),
 				@ColumnResult(name = "loj10"), @ColumnResult(name = "loj9"), @ColumnResult(name = "loj11"),
-				@ColumnResult(name = "loj12"), @ColumnResult(name = "loj13")   }) }),
+				@ColumnResult(name = "loj12"), @ColumnResult(name = "loj13"), @ColumnResult(name = "loj14")   }) }),
 		@SqlResultSetMapping(name = "buscaEstoqueMappingOex", classes = {
 				@ConstructorResult(targetClass = com.sysconard.Glojas.DTO.EstoqueDTO.class, columns = {
 						@ColumnResult(name = "refplu"), @ColumnResult(name = "marca"), @ColumnResult(name = "descricao"),
@@ -50,7 +52,7 @@ import com.sysconard.Glojas.DTO.EstoqueDTO;
 						@ColumnResult(name = "loj4"), @ColumnResult(name = "loj5"),
 						@ColumnResult(name = "loj6"), @ColumnResult(name = "loj7"), @ColumnResult(name = "loj8"),
 						@ColumnResult(name = "loj10"), @ColumnResult(name = "loj9"), @ColumnResult(name = "loj11"),
-						@ColumnResult(name = "loj12"), @ColumnResult(name = "loj13")  }) })})
+						@ColumnResult(name = "loj12"), @ColumnResult(name = "loj13"), @ColumnResult(name = "loj14")  }) })})
 
 
 @Entity
