@@ -17,6 +17,8 @@ import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.criterion.Subqueries;
 import org.hibernate.sql.JoinType;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -44,7 +46,7 @@ public class UsuariosImpl implements UsuariosQueries {
 
 	@Override
 	public Optional<Usuario> porEmailEAtivo(String email) {
-		return manager.createQuery("from Usuario where lower(email) = lower(:email) and ativo = true", Usuario.class)
+		return manager.createQuery("from Usuario where lower(email) = lower(:email)", Usuario.class)
 				.setParameter("email", email).getResultList().stream().findFirst();
 	}
 

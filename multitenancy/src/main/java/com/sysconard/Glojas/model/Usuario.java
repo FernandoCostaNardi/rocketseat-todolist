@@ -3,6 +3,7 @@ package com.sysconard.Glojas.model;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -49,6 +50,7 @@ public class Usuario implements Serializable {
 	@NotBlank(message = "O banco de dados do usuário é obrigatório")
 	private String banco;
 
+	@Column(name = "ativo")
 	private Boolean ativo;
 
 	@Size(min = 1, message = "Selecione pelo menos um grupo")
@@ -165,4 +167,5 @@ public class Usuario implements Serializable {
 			return false;
 		return true;
 	}
+
 }
