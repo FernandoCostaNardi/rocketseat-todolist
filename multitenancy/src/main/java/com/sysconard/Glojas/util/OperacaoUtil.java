@@ -8,7 +8,9 @@ public class OperacaoUtil {
 	public List<String> operacaoTroca() {
 		List<String> operacaoTroca = new ArrayList<String>();
 		operacaoTroca.add("000015");
+		operacaoTroca.add("000035");
 		operacaoTroca.add("000048");
+		operacaoTroca.add("000061");
 		return operacaoTroca;
 	}
 
@@ -27,6 +29,15 @@ public class OperacaoUtil {
 		operacaoVenda.add("000068");
 		operacaoVenda.add("000069");
 		operacaoVenda.add("000071");
+		operacaoVenda.add("000076");
+		operacaoVenda.add("000077");
+		operacaoVenda.add("000080");
+		operacaoVenda.add("000081");
+		operacaoVenda.add("000083");
+		operacaoVenda.add("000084");
+		operacaoVenda.add("000085");
+		operacaoVenda.add("000086");
+		operacaoVenda.add("000093");
 		return operacaoVenda;
 	}
 
